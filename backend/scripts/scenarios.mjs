@@ -42,13 +42,12 @@ assert.equal((await call(`/claims/${claim.id}/documents`, form, 409)).error.code
 const assistant = await call('/assistant/status');
 if (!assistant.configured) {
   assert.equal((await call('/assistant/chat', { locale: 'en', message: 'Explain travel insurance.' }, 503)).error.code, 'ASSISTANT_NOT_CONFIGURED');
-  assert.equal((await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: claimsPolicy.id }, 422)).error.code, 'POLICY_CONSENT_REQUIRED');
-  await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: randomUUID(), sharePolicy: true }, 404);
-  await call('/assistant/chat', { locale: 'en', message: 'x'.repeat(1501) }, 422);
-  const previous = cookie; cookie = '';
-  await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: claimsPolicy.id, sharePolicy: true }, 401);
-  cookie = previous;
 }
+// These checks must run with or without a key. Each fails before any provider call.
+assert.equal((await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: claimsPolicy.id }, 422)).error.code, 'POLICY_CONSENT_REQUIRED');
+await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: randomUUID(), sharePolicy: true }, 404);
+await call('/assistant/chat', { locale: 'en', message: 'x'.repeat(1501) }, 422);
+await call('/assistant/chat', { locale: 'en', message: 'Explain.', policyId: claimsPolicy.id, sharePolicy: true }, 401, { cookie: '' });
 await new Promise(resolve => setTimeout(resolve, 15500));
 for (const item of waiting) {
   const reconciled = await call(`/orders/${item.id}/reconcile`, {}); assert.equal(reconciled.status, 'issued');
