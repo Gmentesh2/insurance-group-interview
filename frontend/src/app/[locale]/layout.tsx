@@ -26,6 +26,7 @@ import "@/styles/assistant.css";
 
 import { messagesFor } from "@/messages";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
+import { AssistantWidget } from "@/features/assistant/widget";
 import { CurrencyProvider } from "@/components/currency-provider";
 import type { Locale } from "@/lib/contracts";
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default async function LocaleLayout({
         >
           <CurrencyProvider><SiteHeader />
           <main id="main">{children}</main>
-          <SiteFooter /></CurrencyProvider>
+          <SiteFooter /><AssistantWidget /></CurrencyProvider>
         </NextIntlClientProvider>
       </body>
     </html>
