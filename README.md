@@ -2,7 +2,7 @@
 
 A travel-insurance **demonstration** adapted to the interview assignment: React/TypeScript frontend, C#/ASP.NET Core Web API, EF Core and PostgreSQL. The interface supports English, German and Russian. Providers, payment and policy cover are fictional; certificates state **DEMO — NOT VALID INSURANCE**.
 
-The interface is reused and adapted from an existing project; [UPSTREAM.md](UPSTREAM.md) identifies its source commit and the new work. The original Insurance Group repository and database remain separate. [Requirements](docs/requirements.md), [architecture/data model](docs/architecture.md), [verification](docs/verification.md), [assistant prompt](docs/assistant-system-prompt.md), [completion and presentation plan](docs/superpowers/plans/2026-10-16-interview-completion.md).
+The interface is reused and adapted from an existing project; [UPSTREAM.md](UPSTREAM.md) identifies its source commit and the new work. The original Insurance Group repository and database remain separate. [Requirements](docs/requirements.md), [architecture/data model](docs/architecture.md), [verification](docs/verification.md), [assistant prompt](docs/assistant-system-prompt.md), [completion and presentation plan](docs/superpowers/plans/2026-10-16-interview-completion.md), [Georgian presentation guide](docs/interview-presentation.md).
 
 ## Features
 

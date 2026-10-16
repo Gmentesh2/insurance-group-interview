@@ -8,6 +8,10 @@
 
 **Execution:** Work inline in the existing interview repository. Follow its AGENTS.md and existing user preferences: focused verification, low concurrency, no cosmetic test campaign and no changes to the original repository.
 
+## Scope confirmed with the user
+
+The user narrowed delivery to mandatory assignment requirements. Further landing redesigns, live integrations and the optional Gemini milestone are deferred. This plan does not require completing a production insurance platform.
+
 ## Current status
 
 Code/evidence baseline: `cf30bc2`, 16 October 2026. No missing mandatory feature was identified in this scoped audit. The mandatory features are implemented and have recorded verification; this is not a claim that every possible defect has been excluded. See [requirements](../../requirements.md) and [actual verification](../../verification.md). This planning pass inspected the current implementation and confirmed API health and HTTP200 for the account preview; it did not rerun previously passing suites.
@@ -41,10 +45,10 @@ Completion: no reproduced field inconsistency or broken edit/validation path rem
 
 Files: `README.md`, `scripts/{configure,run,config}.mjs`, `compose.yaml`, `backend/Migrations`, `docs/verification.md`.
 
-- [ ] Rehearse the documented clean-checkout setup with its own generated configuration and fresh database. Preserve the active preview, original services and existing data. Use a separate isolated database name/connection or a separate assessment machine; never reset the current volume for this check.
-- [ ] Apply the checked-in EF migrations, start API and frontend, register a fictional user and confirm the first empty account screen. Verify no copied `.env` or pre-existing records are needed.
+- [x] Rehearse the documented clean-checkout setup with its own generated configuration and fresh database. Preserve the active preview, original services and existing data. Use a separate isolated database name/connection or a separate assessment machine; never reset the current volume for this check.
+- [x] Apply the checked-in EF migrations, start API and frontend, register a fictional user and confirm the first empty account screen. Verify no copied `.env` or pre-existing records are needed.
 - [ ] Confirm the reviewer has access to the private repository and identify `codex/interview-platform` as the current submission branch. Granting access needs the reviewer's identity and the user's authorization; do not make the repository public as a workaround.
-- [ ] Update verification with the exact setup result. Fix documentation or startup defects only if observed.
+- [x] Update verification with the exact setup result. Fix documentation or startup defects only if observed.
 
 Completion: a reviewer can reproduce the app from the documented prerequisites and repository without receiving credentials in source.
 
@@ -53,7 +57,7 @@ Completion: a reviewer can reproduce the app from the documented prerequisites a
 Files: `docs/architecture.md`, `docs/requirements.md`, `docs/verification.md`, this plan. Reuse existing evidence; change application code only for a reproduced defect.
 
 - [ ] Run the short walkthrough below with disposable fictional records. Finish the previously unobserved browser request-for-information/resubmission path, plus visible draft deletion; backend checks already cover these transitions.
-- [ ] Prepare explanations of Identity password hashing/session cookies, server ownership checks, EF relationships/migrations, immutable purchased snapshots, idempotency/version conflicts and the demo-wide advisory-lock tradeoff.
+- [x] Prepare explanations of Identity password hashing/session cookies, server ownership checks, EF relationships/migrations, immutable purchased snapshots, idempotency/version conflicts and the demo-wide advisory-lock tradeoff.
 - [ ] Record the final commit and remaining limitations. Retain source attribution: the frontend was adapted from an existing project, not created entirely from scratch during this assignment.
 
 Completion: the presenter can demonstrate the requirements and explain the code and limitations in their own words.
@@ -94,3 +98,9 @@ The scoped lint command covers the form modules listed in task 1; adjust it if t
 ## Separate product milestones
 
 Real Flitt/insurer activation, Health purchasing, the remaining categories, native apps, social/phone/QR authentication, production password recovery/email verification and operational deployment are outside this assignment's mandatory scope. They belong to later product work and must not be represented as completed or required for interview submission.
+
+## Execution checkpoint —16 October2026
+
+Mandatory acceptance evidence is recorded in docs/verification.md. Clean-clone setup and browser registration/empty state passed with an isolated temporary database; temporary services/data/checkout were removed. Draft create/read/update/reload passed; confirmation/cancel UI was checked and guarded authenticated DELETE removed only the disposable draft. Browser permanent-delete activation was not performed, so that checkbox above remains qualified rather than overstated. Operator request/customer resubmission/history passed with the existing fictional evidence retained. Existing shared-field checks were reused; no new cosmetic pass, packages or application patch was needed.
+
+The presentation guide is docs/interview-presentation.md. Reviewer GitHub access and the human presenter's own rehearsal are handoff items. Optional Gemini,200%zoom, reduced-motion emulation and screen-reader speech remain outside the completed evidence. Unchecked broader design/optional tasks are deferred by the narrowed user scope, not missing mandatory features.
