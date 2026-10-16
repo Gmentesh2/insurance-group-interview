@@ -21,3 +21,7 @@ The supplied assignment requires a working full-stack application by 19 October,
 | Explain unfinished functionality | README limitations and docs/verification.md separate checked behavior from remaining integration work. |
 
 Out of scope: live insurer/Flitt activation, native apps, purchasing eight preview categories, production email/password reset, full operational deployment and a claim that AI answers are correct without live verification.
+
+## Remaining delivery work
+
+As of 16 October 2026 at code baseline cf30bc2, this scoped audit found implementations and recorded evidence for all mandatory feature areas. Remaining acceptance work is clean-environment setup, targeted UI/field consistency review, browser request-for-information/resubmission and disposable draft-deletion rehearsal, presenter preparation and reviewer repository access. Optional live Gemini verification awaits private configuration. These are distinct from missing mandatory backend/frontend features. See the [ordered completion plan](superpowers/plans/2026-10-16-interview-completion.md); no new broad test/build campaign was run for this documentation audit.
