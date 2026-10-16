@@ -21,7 +21,7 @@ public sealed record OrderDto(Guid Id, string UserId, QuoteDto Quote, TripInput 
 public sealed record PolicyDto(Guid Id, Guid OrderId, string UserId, string Number, QuoteDto Quote, TripInput Trip, TravelerInput[] Travelers, string? ContactEmail, string Status, string DocumentStatus, DateTimeOffset CreatedAt);
 public sealed record EvidenceDto(Guid Id, string Name, long Size, string MimeType, DateTimeOffset CreatedAt);
 public sealed record ClaimDto(Guid Id, string UserId, Guid PolicyId, string IncidentType, string IncidentDate, string Description, int AmountCents, string Currency, string Status, EvidenceDto[] Documents, EventDto[] Events, DateTimeOffset CreatedAt, DateTimeOffset UpdatedAt);
-public sealed record SessionUserDto(string Id, string Email, string Role, bool IsGuest);
+public sealed record SessionUserDto(string Id, string Email, string Role, bool IsGuest, string? Username = null);
 public sealed record AuthSessionDto(SessionUserDto? User);
 public sealed record CredentialsInput(string Email, string Password);
 public sealed record GuestCredentialsInput(string Email, string Password, bool Register);

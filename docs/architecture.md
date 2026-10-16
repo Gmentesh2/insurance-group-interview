@@ -64,3 +64,7 @@ The API key is a server environment secret passed in a header to the fixed Googl
 ## Public widget and full chat
 
 The lazy Base UI widget and dedicated assistant page share `frontend/src/features/assistant/use-assistant.ts` and `conversation.tsx`. Compact mode is public-only: no session/policy list is requested and no policy facts enter its payload. Public Send to Gemini is an explicit action beside a provider disclosure. The full page retains separate message and owned-policy opt-ins. C# ownership, timeout/concurrency/rate/output bounds and fixed provider transport remain authoritative. Closing/navigation cancels the request and clears mounted history; auth changes/session expiry clear identity-sensitive state. Provider secrets are local/server configuration and never enter the client bundle.
+
+## Optional local customer fixture
+
+`DemoAccount__Username` / `DemoAccount__Password` can provision a Development-only customer for review. The seed refuses pre-existing conflicting accounts/passwords and never assigns operator privileges. Source defaults are empty; credentials live only in private local configuration. Login accepts email or username through the existing `email` request field. Session output adds an optional `username` for same-identity reconciliation after uncertain responses. Registration remains email-based, with 8–128-character passwords and no composition requirements; Identity hashing, lockout and private cookies are retained. Email OTP/delivery was explicitly declined for this demo.

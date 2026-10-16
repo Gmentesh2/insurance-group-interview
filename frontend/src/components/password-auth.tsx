@@ -23,8 +23,8 @@ export function PasswordAuthForm({onSuccess,defaultEmail='',linkGuest=false,draf
  async function submit(event:FormEvent) {
   event.preventDefault();if(request.current)return;
   const invalid:Record<string,string>={};
-  if(!contactEmailSchema.safeParse(email).success)invalid.email=t('invalidEmail');
-  if(!password||password.length>128||(register&&(password.length<12||!/[A-Z]/.test(password)||!/[a-z]/.test(password)||!/\d/.test(password)||!/[^A-Za-z0-9]/.test(password))))invalid.password=t('invalidPassword');
+  if(register?!contactEmailSchema.safeParse(email).success:!email.trim()||email.trim().length>254)invalid.email=t(register?'invalidEmail':'invalidIdentifier');
+  if(!password||password.length>128||(register&&password.length<8))invalid.password=t('invalidPassword');
   if(register&&confirm!==password)invalid.confirm=t('mismatch');
   setFields(invalid);setError('');
   if(Object.keys(invalid).length){requestAnimationFrame(()=>form.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus());return;}
@@ -34,7 +34,7 @@ export function PasswordAuthForm({onSuccess,defaultEmail='',linkGuest=false,draf
    if(!controller.signal.aborted){clearAuthFormDrafts();setPassword('');setConfirm('');onSuccess(session);}
   }catch(e){
    if(controller.signal.aborted)return;
-   try{const session=await api<AuthSession>('/auth/session',{signal:controller.signal});if(session.user&&!session.user.isGuest&&session.user.email.toLowerCase()===targetEmail){clearAuthFormDrafts();setPassword('');setConfirm('');onSuccess(session);return;}}catch{/* Never resubmit credentials automatically after an uncertain result. */}
+   try{const session=await api<AuthSession>('/auth/session',{signal:controller.signal});if(session.user&&!session.user.isGuest&&[session.user.email,session.user.username].some(value=>value?.toLowerCase()===targetEmail)){clearAuthFormDrafts();setPassword('');setConfirm('');onSuccess(session);return;}}catch{/* Never resubmit credentials automatically after an uncertain result. */}
    if(!controller.signal.aborted){const code=e instanceof RequestError?e.code:'';setError(t.has(code)?t(code):t('error'));}
   }finally{if(!controller.signal.aborted){request.current=null;setBusy(false);}}
  }
@@ -45,11 +45,11 @@ export function PasswordAuthForm({onSuccess,defaultEmail='',linkGuest=false,draf
   {!linkGuest&&<><div className="sign-in-heading"><h1 ref={heading} tabIndex={-1}>{register?t('register'):screen('welcome')}</h1></div><p className="account-lead">{register?t('registerIntro'):screen('intro')}</p></>}
   <form ref={form} className="account-auth-form password-auth-form" onSubmit={submit}>
    {error&&<div className="account-error-text" role="alert">{error}</div>}
-   <FormField id={`${id}-email`} label={t('email')} required error={fields.email}>
-    {control => <Input {...control} name="email" type="email" autoComplete="email" spellCheck={false} maxLength={254} disabled={busy} value={email} onChange={e=>updateField('email',e.target.value)} />}
+   <FormField id={`${id}-email`} label={t(register?'email':'identifier')} required error={fields.email}>
+    {control => <Input {...control} name="email" type={register?'email':'text'} autoComplete={register?'email':'username'} autoCapitalize="none" spellCheck={false} maxLength={254} disabled={busy} value={email} onChange={e=>updateField('email',e.target.value)} />}
    </FormField>
    <FormField id={`${id}-password`} label={t('password')} required hint={register?t('rules'):undefined} error={fields.password}>
-    {control => <div className="password-field"><Input {...control} name="password" type={show?'text':'password'} autoComplete={register?'new-password':'current-password'} minLength={register?12:1} maxLength={128} pattern={register?"(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{12,128}":undefined} title={register?t('rules'):undefined} disabled={busy} value={password} onChange={e=>updateField('password',e.target.value)} /><button className="icon-button" type="button" aria-label={t(show?'hide':'show')} aria-pressed={show} onClick={()=>setShow(value=>!value)}>{show?<EyeOff size={19} aria-hidden="true"/>:<Eye size={19} aria-hidden="true"/>}</button></div>}
+    {control => <div className="password-field"><Input {...control} name="password" type={show?'text':'password'} autoComplete={register?'new-password':'current-password'} minLength={register?8:1} maxLength={128} disabled={busy} value={password} onChange={e=>updateField('password',e.target.value)} /><button className="icon-button" type="button" aria-label={t(show?'hide':'show')} aria-pressed={show} onClick={()=>setShow(value=>!value)}>{show?<EyeOff size={19} aria-hidden="true"/>:<Eye size={19} aria-hidden="true"/>}</button></div>}
    </FormField>
    {register&&<FormField id={`${id}-confirm`} label={t('confirm')} required error={fields.confirm}>
     {control => <Input {...control} name="confirmPassword" type={show?'text':'password'} autoComplete="new-password" maxLength={128} disabled={busy} value={confirm} onChange={e=>updateField('confirm',e.target.value)} />}

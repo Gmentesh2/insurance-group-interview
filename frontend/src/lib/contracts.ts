@@ -49,6 +49,7 @@ export interface QuoteSession {
 export interface SessionUser {
   id: string;
   email: string;
+  username?: string | null;
   role: "customer" | "operator";
   isGuest?: boolean;
   accessOwnerIds?: string[];
@@ -153,7 +154,7 @@ export interface OperationsData {
 GET /api/v1/auth/session -> AuthSession
 POST /auth/guest {} -> AuthSession (private anonymous customer; existing owner reused)
 POST /auth/register {email,password} -> AuthSession
-POST /auth/login {email,password} -> AuthSession
+POST /auth/login {email,password} -> AuthSession (email field accepts email or username)
 POST /auth/guest-access/credentials {email,password,register:boolean} -> AuthSession (guest purchase ownership transfer)
 POST /auth/sign-out {} -> {ok:true}
 POST /quotes TripInput -> QuoteSession; GET /quote-sessions/:id -> QuoteSession

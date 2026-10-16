@@ -21,7 +21,7 @@ public sealed class CurrentOwner(HttpContext context, UserManager<ApplicationUse
     public async Task<AuthSessionDto> Session(ApplicationUser? user = null)
     {
         user ??= await Optional();
-        return new(user is null ? null : new(user.Id, user.IsGuest ? "" : user.Email ?? "", await users.IsInRoleAsync(user, "operator") ? "operator" : "customer", user.IsGuest));
+        return new(user is null ? null : new(user.Id, user.IsGuest ? "" : user.Email ?? "", await users.IsInRoleAsync(user, "operator") ? "operator" : "customer", user.IsGuest, user.IsGuest ? null : user.UserName));
     }
 }
 /// <summary>All demo writes are short, atomic PostgreSQL transactions. A database advisory

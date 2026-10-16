@@ -22,22 +22,24 @@ public sealed class AccountService(InsuranceDbContext db, UserManager<Applicatio
     {
         var current = await owner.Optional();
         if (guestOnly && current?.IsGuest != true) throw new ApiException(409, "GUEST_REQUIRED", "Use your current guest session to save its access.");
-        var email = Validation.Email(emailInput);
-        Validation.Require(password is { Length: >= 12 and <= 128 }, "Use a password of 12 to 128 characters.", "password");
+        var identifier = emailInput?.Trim() ?? "";
+        Validation.Require(identifier.Length is >= 1 and <= 254, "Enter your email or username.", "email");
+        Validation.Require(password is { Length: >= 8 and <= 128 }, "Use a password of 8 to 128 characters.", "password");
         ApplicationUser user;
         if (register)
         {
+            var email = Validation.Email(identifier);
             user = new ApplicationUser { UserName = email, Email = email };
             var result = await users.CreateAsync(user, password);
             if (!result.Succeeded)
             {
                 var duplicate = result.Errors.Any(x => x.Code.Contains("Duplicate", StringComparison.Ordinal));
-                throw new ApiException(duplicate ? 409 : 422, duplicate ? "EMAIL_IN_USE" : "PASSWORD_INVALID", duplicate ? "An account already exists for this email. Sign in instead." : "Use at least 12 characters, including uppercase, lowercase, a number and a symbol.");
+                throw new ApiException(duplicate ? 409 : 422, duplicate ? "EMAIL_IN_USE" : "PASSWORD_INVALID", duplicate ? "An account already exists for this email. Sign in instead." : "Use a password of 8 to 128 characters.");
             }
         }
         else
         {
-            user = await users.FindByEmailAsync(email) ?? throw new ApiException(401, "INVALID_CREDENTIALS", "The email or password is incorrect.");
+            user = await users.FindByNameAsync(identifier) ?? await users.FindByEmailAsync(identifier) ?? throw new ApiException(401, "INVALID_CREDENTIALS", "The email or username and password are incorrect.");
             if (user.IsGuest) throw new ApiException(401, "INVALID_CREDENTIALS", "The email or password is incorrect.");
             var result = await signIn.CheckPasswordSignInAsync(user, password, lockoutOnFailure: true);
             if (!result.Succeeded) throw new ApiException(result.IsLockedOut ? 429 : 401, result.IsLockedOut ? "RATE_LIMITED" : "INVALID_CREDENTIALS", result.IsLockedOut ? "Too many attempts. Try again in a few minutes." : "The email or password is incorrect.");

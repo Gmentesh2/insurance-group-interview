@@ -2,7 +2,25 @@
 
 Scope: this isolated interview adaptation, not a production readiness certification. Original Insurance Group remained at83e0231 with a clean working tree; its preview/services/database were not modified. New preview is localhost3001, API5081 and independent PostgreSQL55462.
 
-## Backend
+## Current evidence snapshot
+
+Mandatory assignment areas are implemented with the recorded checks below. Clean local setup, purchase/PDF/claims, ownership/CRUD and browser resubmission have evidence; optional Gemini was later exercised with six bounded live examples. The user confirmed assessor access to the private repository. [SUBMISSION.md](../SUBMISSION.md) is the current handoff entry point.
+
+The sections below are chronological evidence, not a list of tasks still pending. Early statements about an unconfigured assistant describe that earlier baseline; the later public-widget section supersedes them. 200% zoom, OS reduced-motion emulation, screen-reader speech and other browser engines remain unverified. Clean-clone setup used this machine's installed prerequisites/package caches. No production readiness or universal AI accuracy is asserted.
+
+## Final regression-script correction
+
+A scoped audit found that `backend/scripts/scenarios.mjs` placed four assistant validation/ownership checks inside the missing-key condition. With Gemini configured, those checks were silently skipped. Only the missing-key503 assertion is now conditional; missing policy consent422, inaccessible policy404, oversized message422 and anonymous policy sharing401 run in both configurations. Anonymous requests override their own cookie header without mutating the shared fixture session.
+
+The prior skip was reproduced with a stubbed execution of the assistant block. The corrected block exercised four boundary assertions with configured=true and five with configured=false, including missing-key503. No network was used in that branch check. A separate six-request local configured-server check covered login/status and the four expected rejections; each validation/ownership rejection occurs before provider transport, so no Google generation call was needed. `node --check backend/scripts/scenarios.mjs` passed. Focused read-only independent JavaScript review found no issue. The full scenario suite, application builds and unchanged purchase flows were not repeated for this test-script/documentation correction.
+
+## Password-only authentication follow-up
+
+The user explicitly declined OTP/email-provider integration and requested simpler password rules, then requested a named local demo customer. Frontend/native constraints, EN/DE/RU hints, service validation and Identity now accept 8–128 characters without uppercase/digit/symbol composition requirements. Password hashing, lockout, sessions and ownership remain unchanged. Login accepts email or username; registration still requires email. The optional Development-only fixture uses private configuration and cannot overwrite a conflicting account/password or obtain an operator role. No schema change or email service was added.
+
+`backend/scripts/auth-policy.mjs` passed 14 local HTTP requests after integration: rejected 7/129-character registration, accepted 8 lowercase characters, authenticated login, wrong-password rejection, logout/session, guest registration and configured demo username/customer-role login. The earlier password-only baseline passed the same core checks in 12 requests before username support was requested. In the real browser, registration displayed the 8–128 hint with native minLength8/maxLength128 and no pattern; the requested username/password then opened the empty customer Policies page. Saved blank [registration](previews/password-registration-en.jpg) and fictional [customer account](previews/demo-customer-account.jpg) previews contain no passwords. Final frontend typecheck/scoped ESLint and the integrated production build passed (31 static pages, two workers, 2048 MiB heap cap). The C# build passed with zero warnings/errors. No full purchase/scenario rerun or additional email/provider service was needed. Focused independent review found no blocking issue. Assessor `Gmentesh2` access was separately confirmed by a read-only GitHub check as active Write; no permissions were changed.
+
+## Backend — initial integration
 
 ASP.NET Core/EF Core10 builds completed with zero warnings/errors. Real checked-in EF migrations were applied to the separate PostgreSQL16 database; no EnsureCreated or Supabase business fallback. A GUID child-tracking defect found during initial integration was fixed with explicit application-generated keys and a metadata migration. Evidence content was split from metadata with an additive migration so list reads never materialize attachment blobs.
 

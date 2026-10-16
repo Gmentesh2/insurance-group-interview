@@ -18,9 +18,9 @@ builder.Services.AddDbContext<InsuranceDbContext>(options => options.UseNpgsql(c
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.User.RequireUniqueEmail = true;
-    options.Password.RequiredLength = 12;
-    options.Password.RequireUppercase = true; options.Password.RequireLowercase = true;
-    options.Password.RequireDigit = true; options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireUppercase = false; options.Password.RequireLowercase = false;
+    options.Password.RequireDigit = false; options.Password.RequireNonAlphanumeric = false;
     options.Lockout.MaxFailedAccessAttempts = 5; options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 }).AddEntityFrameworkStores<InsuranceDbContext>().AddDefaultTokenProviders();
 builder.Services.ConfigureApplicationCookie(options =>
@@ -65,5 +65,6 @@ var api = app.MapGroup("/api/v1").AddEndpointFilter<MutationTransactionFilter>()
 api.MapAuth(); api.MapCheckout(); api.MapPolicies(); api.MapClaims(); api.MapOperations(); api.MapAssistant();
 app.MapFallback("/api/{**path}", () => Results.Json(new { error = new { code = "NOT_FOUND", message = "This API route could not be found." } }, statusCode: 404));
 await app.SeedOperator();
+await app.SeedDemoAccount();
 app.Run();
 public partial class Program { }
