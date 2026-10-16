@@ -1,6 +1,6 @@
 # Interview submission
 
-Repository: [InnovationEdge/insurance-group-interview](https://github.com/InnovationEdge/insurance-group-interview) (private). Submission branch: **codex/interview-platform**. The user confirmed assessor access on 16 October 2026. Use this branch's HEAD as the submitted version.
+Repository: [Gmentesh2/insurance-group-interview](https://github.com/Gmentesh2/insurance-group-interview) (private). Submission branch: **main**. Invite assessors as collaborators before sharing this repository. Use this branch's HEAD as the submitted version.
 
 This is a travel-insurance demonstration adapted from an existing frontend, with a separate C#/ASP.NET Core backend, ASP.NET Core Identity, EF Core and PostgreSQL. It demonstrates the mandatory full-stack assignment; it is not live insurance. The optional server-side Gemini assistant is included. No credentials or API keys are supplied in the repository.
 

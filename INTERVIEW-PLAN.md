@@ -1,6 +1,6 @@
 # Interview adaptation implementation plan
 
-Goal: deliver the existing Insurance Group experience in a separate repository using React/TypeScript/Tailwind and a C#/ASP.NET Core Web API backed by PostgreSQL and EF Core. Original source: InnovationEdge/insurance-group at 83e0231ab6adb0e01910878fd301678029889c6c. Never alter the original checkout, database, secrets or running preview.
+Goal: deliver the existing Insurance Group experience in a separate repository using React/TypeScript/Tailwind and a C#/ASP.NET Core Web API backed by PostgreSQL and EF Core. Original frontend source and commit: [source attribution](UPSTREAM.md). Never alter the original checkout, database, secrets or running preview.
 
 Architecture: frontend/ retains the Next.js presentation and typed /api/v1 JSON contracts; a same-origin rewrite delegates to backend/. ASP.NET Core Identity owns password hashing and secure cookie authentication. EF Core owns migrations and normalized users/orders/travelers/policies/claims/evidence/events. Snapshot JSON is limited to immutable quote/trip benefit data. PostgreSQL database, credentials, cookie names, ports and private files are isolated.
 
