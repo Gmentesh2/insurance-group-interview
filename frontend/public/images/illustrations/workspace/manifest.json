@@ -1,0 +1,56 @@
+[
+  {
+    "name": "documents",
+    "file": "documents.webp",
+    "source": "exec-c17cc0d3-5985-4b78-b904-189b273adcdb.png",
+    "width": 720,
+    "height": 480,
+    "alpha": true,
+    "bytes": 21394
+  },
+  {
+    "name": "documents",
+    "file": "documents-thumb.webp",
+    "source": "exec-c17cc0d3-5985-4b78-b904-189b273adcdb.png",
+    "width": 180,
+    "height": 120,
+    "alpha": true,
+    "bytes": 3516
+  },
+  {
+    "name": "claims",
+    "file": "claims.webp",
+    "source": "exec-cbcef034-d404-4486-81c2-7174083d676c.png",
+    "width": 720,
+    "height": 480,
+    "alpha": true,
+    "bytes": 35118
+  },
+  {
+    "name": "claims",
+    "file": "claims-thumb.webp",
+    "source": "exec-cbcef034-d404-4486-81c2-7174083d676c.png",
+    "width": 180,
+    "height": 120,
+    "alpha": true,
+    "bytes": 5964
+  },
+  {
+    "name": "support",
+    "file": "support.webp",
+    "source": "exec-eaefcf46-be3f-41a7-990a-27b689a6622d.png",
+    "width": 720,
+    "height": 480,
+    "alpha": true,
+    "bytes": 41442
+  },
+  {
+    "name": "support",
+    "file": "support-thumb.webp",
+    "source": "exec-eaefcf46-be3f-41a7-990a-27b689a6622d.png",
+    "width": 180,
+    "height": 120,
+    "alpha": true,
+    "bytes": 7306
+  }
+]

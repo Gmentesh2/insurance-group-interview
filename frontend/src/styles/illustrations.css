@@ -1,0 +1,49 @@
+/* One restrained illustration language; operational icons retain their meaning. */
+.insurance-illustration { display: block; object-fit: contain; }
+.header-brand-group { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.header-brand-group > a { display: inline-flex; align-items: center; min-height: 44px; flex-shrink: 0; }
+.header-back { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--ink); background: var(--surface); border: 1px solid var(--line); }
+.header-back:hover { background: var(--selected); color: var(--brand); }
+.header-back:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+.header-account > svg { flex-shrink: 0; }
+.product-nav-art { width: 44px; height: 36px; flex-shrink: 0; }
+.page-identity { display: flex; align-items: center; gap: 20px; min-width: 0; }
+.page-identity > .insurance-illustration { width: 108px; height: 80px; flex-shrink: 0; }
+.page-identity-copy { min-width: 0; }
+.page-identity-copy > h1 { margin: 0; }
+.page-identity-copy > p { margin: 10px 0 0; color: var(--muted); line-height: 1.5; }
+.page-identity-copy > .claim-reference { margin: 0 0 8px; }
+.empty-illustration { width: 180px; height: 120px; margin: 0 auto; }
+.support-intro { max-width: 900px; }
+.support-intro .page-identity { flex-direction: row-reverse; justify-content: space-between; gap: 40px; }
+.support-intro .page-identity > img { width: 180px; height: 140px; }
+.support-intro .page-identity-copy { max-width: 640px; }
+.support-intro .page-identity-copy > p { font-size: 19px; line-height: 1.6; }
+.support-task-art { width: 48px; height: 44px; }
+.results-heading .page-identity { flex-direction: row-reverse; justify-content: space-between; }
+.results-heading .page-identity-copy > p { max-width: 700px; font-size: 18px; }
+.product-journey > .page-identity { margin: 0 0 28px; }
+.product-journey > .page-identity h1 { margin: 0; }
+.sign-in-art { display: flex; justify-content: center; padding: 8px; margin-bottom: 24px; border-radius: 20px; background: transparent; }
+.sign-in-art > img { width: 192px; height: 128px; }
+.checkout-plan-art { width: 96px; height: 64px; margin-bottom: 12px; }
+.wallet-trip-art { width: 180px; height: 144px; flex-shrink: 0; }
+@media (max-width: 767px) {
+  .header-brand-group { gap: 8px; }
+  .account-header .header-brand-group .brand { font-size: 19px; }
+  .page-identity { gap: 12px; }
+  .page-identity > .insurance-illustration { width: 72px; height: 60px; }
+  .support-intro .page-identity { gap: 16px; align-items: flex-start; }
+  .support-intro .page-identity > img { width: 80px; height: 72px; }
+  .support-intro .page-identity-copy > p { font-size: 17px; }
+  .results-heading .page-identity-copy > p { font-size: 16px; }
+  .checkout-plan-art { width: 60px; height: 40px; margin-bottom: 8px; }
+  .customer-workspace .wallet-lead-body { display: flex; gap: 8px; padding: 16px; }
+  .customer-workspace .wallet-lead-body h2 { font-size: 28px; }
+  .wallet-trip-art { width: 96px; height: 100px; }
+}
+@media (max-width: 390px) {
+  .header-brand-group { gap: 4px; }
+  .account-header .header-brand-group .brand { font-size: 18px; }
+  .wallet-trip-art { width: 76px; height: 88px; }
+}

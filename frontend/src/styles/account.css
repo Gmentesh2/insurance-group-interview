@@ -1,0 +1,2729 @@
+.account-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+.account-page h1,
+.account-narrow h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 12px 0 16px;
+}
+.account-page h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.account-page h3 {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.account-lead {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--muted, #53616b);
+  max-width: 600px;
+  margin: 0 0 28px;
+}
+.account-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.account-page-header > .button {
+  flex-shrink: 0;
+}
+.account-page-header .account-lead {
+  margin-bottom: 0;
+}
+.account-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #53616b;
+  margin-bottom: 32px;
+  text-decoration: none;
+}
+.account-back:hover {
+  color: #244cd8;
+}
+.account-narrow {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+.account-auth-mark,
+.account-feature-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #edf1ff;
+  color: #244cd8;
+  margin-bottom: 24px;
+}
+.account-auth-form {
+  padding: 28px;
+  margin-top: 32px;
+  display: grid;
+  gap: 20px;
+}
+.account-auth-form .field {
+  margin: 0;
+}
+.account-full {
+  width: 100%;
+  justify-content: center;
+}
+.account-security {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #53616b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.account-security svg {
+  flex-shrink: 0;
+}
+.account-inbox {
+  padding-top: 16px;
+  border-top: 1px solid #dee3e5;
+  font-size: 13px;
+  color: #53616b;
+}
+.account-inbox p {
+  margin-bottom: 8px;
+}
+.account-inbox a {
+  color: #244cd8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.otp-input {
+  letter-spacing: 0.3em;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+}
+.account-loading {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #53616b;
+}
+.spin {
+  animation: account-spin 1.4s linear infinite;
+}
+@keyframes account-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.account-notice {
+  padding: 16px;
+  border: 1px solid #dbe2f6;
+  background: #f2f5ff;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #304889;
+  margin: 16px 0;
+}
+.account-notice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.account-notice-error {
+  background: #fbecee;
+  border-color: #ebc8cd;
+  color: #a92e38;
+}
+.account-notice-success {
+  background: #e8f4ed;
+  border-color: #bfdecf;
+  color: #176349;
+}
+.account-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 99px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  background: #eef1f4;
+  color: #53616b;
+  max-width: 100%;
+  text-wrap: balance;
+}
+.account-status:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.status-active,
+.status-issued,
+.status-paid,
+.status-approved {
+  background: #e8f4ed;
+  color: #176349;
+}
+.status-upcoming,
+.status-ready_to_pay,
+.status-under_review {
+  background: #edf1ff;
+  color: #244cd8;
+}
+.status-issuance_pending,
+.status-bind_unknown,
+.status-more_information,
+.status-submitted {
+  background: #fff3d9;
+  color: #7a4b10;
+}
+.status-payment_declined,
+.status-declined {
+  background: #fbecee;
+  color: #a92e38;
+}
+.account-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+.account-panel {
+  padding: 32px;
+}
+.account-panel h2 {
+  margin-bottom: 16px;
+}
+.account-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.account-section-heading h2,
+.account-section-heading h3 {
+  margin: 0;
+}
+.account-section-heading > svg {
+  color: #244cd8;
+}
+.account-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #244cd8;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  line-height: 1.4;
+}
+.account-text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.account-prose {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #53616b;
+  margin-bottom: 24px;
+}
+.reference-text {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  align-items: start;
+  margin-top: 28px;
+}
+.checkout-main {
+  min-width: 0;
+  display: grid;
+  gap: 24px;
+}
+.checkout-panel {
+  padding: 40px;
+}
+.checkout-panel h1 {
+  font-size: 32px;
+  margin-top: 10px;
+}
+.checkout-summary {
+  padding: 28px;
+  position: sticky;
+  top: 100px;
+}
+.checkout-summary h2 {
+  font-size: 28px;
+  margin: 10px 0 24px;
+}
+.checkout-summary dl {
+  display: grid;
+  gap: 16px;
+}
+.checkout-summary dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.checkout-summary dt {
+  color: #53616b;
+}
+.checkout-summary dd {
+  text-align: right;
+  max-width: 60%;
+  overflow-wrap: anywhere;
+}
+.checkout-total {
+  display: grid;
+  gap: 5px;
+  border-top: 1px solid #dee3e5;
+  border-bottom: 1px solid #dee3e5;
+  padding: 24px 0;
+  margin: 24px 0;
+}
+.checkout-total > span {
+  font-size: 14px;
+}
+.checkout-total > strong {
+  font-size: 36px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.account-summary-demo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #53616b;
+}
+.traveler-forms {
+  display: grid;
+  gap: 32px;
+  margin: 32px 0;
+}
+.traveler-forms fieldset {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.traveler-forms legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.traveler-forms legend span {
+  font-size: 12px;
+  color: #244cd8;
+  background: #edf1ff;
+  padding: 4px 8px;
+  border-radius: 5px;
+  letter-spacing: 0.02em;
+}
+.account-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.account-page .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.account-page .field > small {
+  color: #53616b;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.account-page input,
+.account-page select,
+.account-page textarea {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+.account-page textarea {
+  height: auto;
+  resize: vertical;
+  line-height: 1.5;
+  padding-top: 14px;
+}
+.account-page .input:disabled {
+  color: #53616b;
+  background: #f7f7f3;
+  opacity: 1;
+  cursor: default;
+}
+.account-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 24px 0;
+}
+.account-consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #244cd8;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.account-review-travelers {
+  margin: 28px 0;
+}
+.account-review-travelers > .account-section-heading {
+  margin-bottom: 16px;
+}
+.account-review-travelers > div:not(:first-child) {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf0f1;
+  font-size: 15px;
+}
+.account-coverage {
+  margin-top: 24px;
+}
+.account-coverage h3 {
+  margin-bottom: 12px;
+}
+.account-coverage dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf0f1;
+  font-size: 15px;
+}
+.account-coverage dt {
+  max-width: 55%;
+}
+.account-coverage dd {
+  text-align: right;
+  max-width: 45%;
+}
+.account-coverage strong {
+  font-weight: 600;
+}
+.account-coverage small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #53616b;
+  margin-top: 4px;
+}
+.account-exclusions {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+.account-exclusions summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.account-exclusions p {
+  margin-top: 10px;
+  color: #53616b;
+}
+.account-state {
+  text-align: center;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.account-state > h1 {
+  max-width: 420px;
+  margin: 0;
+}
+.account-state > p {
+  max-width: 430px;
+  margin: 0;
+  line-height: 1.6;
+  color: #53616b;
+}
+.account-state > .eyebrow {
+  color: #244cd8;
+}
+.account-state .button {
+  width: 100%;
+}
+.account-success-mark,
+.account-pending-mark {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f4ed;
+  color: #176349;
+  margin: 4px 0 8px;
+}
+.account-pending-mark {
+  background: #edf1ff;
+  color: #244cd8;
+}
+.issuance-progress {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #dee3e5;
+  border-bottom: 1px solid #dee3e5;
+  margin: 8px 0;
+  padding: 10px 0;
+}
+.issuance-progress > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.issuance-progress > div > svg {
+  color: #176349;
+}
+.issuance-progress > div:last-child > svg {
+  color: #244cd8;
+}
+.issuance-progress > div > strong {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: #53616b;
+}
+.account-price {
+  font-size: 36px;
+  letter-spacing: -0.03em;
+}
+.account-timeline h3 {
+  margin: 0 0 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.account-timeline ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.account-timeline li {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 26px;
+}
+.account-timeline li:last-child {
+  padding-bottom: 0;
+}
+.account-timeline li:not(:last-child):before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background: #dee3e5;
+  position: absolute;
+  left: 4px;
+  top: 10px;
+}
+.timeline-dot {
+  background: #bbc5cc;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+  position: relative;
+}
+.account-timeline li:first-child .timeline-dot {
+  background: #244cd8;
+  box-shadow: 0 0 0 4px #edf1ff;
+}
+.account-timeline strong {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  display: block;
+}
+.account-timeline time {
+  font-size: 12px;
+  color: #53616b;
+  margin-top: 4px;
+  display: block;
+}
+.account-tabs {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border-bottom: 1px solid #dce1e3;
+  margin-bottom: 32px;
+}
+.account-tabs > a {
+  padding: 0 0 16px;
+  color: #53616b;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-size: 15px;
+}
+.account-tabs > a[aria-current] {
+  color: #244cd8;
+  border-color: #244cd8;
+  font-weight: 600;
+}
+.account-tabs > a > span {
+  font-size: 11px;
+  background: #edf1ff;
+  border-radius: 99px;
+  min-width: 19px;
+  height: 19px;
+  padding: 2px 5px;
+  text-align: center;
+}
+.account-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+  font-size: 12px;
+  padding-bottom: 16px;
+  color: #53616b;
+}
+.account-identity span {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.account-identity button {
+  border: 0;
+  background: none;
+  color: #244cd8;
+  cursor: pointer;
+  padding: 0;
+  font-size: 12px;
+}
+.account-pending-list {
+  margin-bottom: 40px;
+}
+.account-pending-list h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.account-order-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border: 1px solid #dce1e3;
+  border-radius: 12px;
+  background: white;
+  margin-bottom: 12px;
+}
+.account-order-row h3 {
+  margin-bottom: 4px;
+}
+.account-order-row p {
+  font-size: 13px;
+  color: #53616b;
+}
+.account-order-row > .account-status {
+  margin-left: auto;
+}
+.account-order-row .button {
+  font-size: 13px;
+  min-height: 42px;
+  flex-shrink: 0;
+}
+.account-order-icon {
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #244cd8;
+  background: #edf1ff;
+  flex-shrink: 0;
+}
+.account-empty {
+  padding: 64px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.account-empty h2 {
+  font-size: 28px;
+  max-width: 450px;
+  margin: 0;
+}
+.account-empty p {
+  color: #53616b;
+  max-width: 420px;
+  line-height: 1.6;
+  margin: 0;
+}
+.account-empty-art {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #dce1e3;
+  display: grid;
+  place-items: center;
+  background: #f7f7f3;
+  color: #53616b;
+  margin-bottom: 12px;
+  position: relative;
+}
+.account-empty-art span {
+  position: absolute;
+  width: 124px;
+  height: 124px;
+  border: 1px dashed #dce1e3;
+  border-radius: 50%;
+}
+.account-empty-art span:last-child {
+  width: 150px;
+  height: 150px;
+  border-color: #edf0f1;
+}
+.policy-list {
+  display: grid;
+  gap: 24px;
+}
+.policy-card {
+  padding: 28px 32px;
+}
+.policy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.policy-card-top .eyebrow {
+  font-size: 11px;
+  color: #697680;
+}
+.policy-card-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+.policy-card-main h2 {
+  font-size: 32px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  letter-spacing: -0.03em;
+}
+.policy-card-dates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #53616b;
+  font-size: 14px;
+}
+.policy-card-plan {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-left: 24px;
+  border-left: 1px solid #dee3e5;
+}
+.policy-card-plan > svg {
+  color: #244cd8;
+}
+.policy-card-plan strong,
+.policy-card-plan span {
+  display: block;
+}
+.policy-card-plan strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+.policy-card-plan span {
+  font-size: 12px;
+  color: #53616b;
+  margin-top: 3px;
+}
+.policy-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid #e5e8ea;
+  padding-top: 20px;
+  margin-top: 28px;
+}
+.policy-card-travelers {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #53616b;
+  font-size: 13px;
+}
+.policy-card-bottom > div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.policy-card-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #53616b;
+  text-decoration: none;
+}
+.policy-card-bottom a:hover {
+  color: #244cd8;
+}
+.policy-card-bottom a.button {
+  color: #18232e;
+  min-height: 40px;
+  padding: 8px 14px;
+}
+.policy-card-past {
+  background: transparent;
+}
+.policy-card-past .policy-card-main h2 {
+  font-size: 24px;
+}
+.policy-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 32px;
+  margin-top: 32px;
+}
+.policy-detail-layout .account-coverage {
+  margin-top: 28px;
+}
+.insured-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+.insured-list > div {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.traveler-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf1ff;
+  color: #244cd8;
+  font-size: 13px;
+  font-weight: 600;
+}
+.insured-list strong,
+.insured-list span {
+  display: block;
+}
+.insured-list strong {
+  font-size: 15px;
+  font-weight: 500;
+}
+.insured-list span {
+  font-size: 13px;
+  color: #53616b;
+  margin-top: 3px;
+}
+.policy-receipt > strong {
+  display: block;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin: 10px 0 16px;
+}
+.policy-receipt > p:last-child {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 18px 0 0;
+}
+.policy-detail-layout #documents .button {
+  white-space: normal;
+  text-align: center;
+  margin-top: 20px;
+}
+.claim-list {
+  display: grid;
+  gap: 16px;
+}
+.claim-list-card {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #18232e;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.claim-list-card:hover {
+  border-color: #244cd8;
+  box-shadow: 0 4px 12px rgb(15 23 42 / 5%);
+}
+.claim-list-icon {
+  width: 48px;
+  height: 56px;
+  border-radius: 10px;
+  background: #f7f7f3;
+  display: grid;
+  place-items: center;
+  color: #53616b;
+  flex-shrink: 0;
+}
+.claim-list-card .eyebrow {
+  font-size: 10px;
+  color: #697680;
+}
+.claim-list-card h2 {
+  font-size: 20px;
+  margin: 5px 0;
+}
+.claim-list-card p {
+  font-size: 13px;
+  color: #53616b;
+}
+.claim-list-card > .account-status {
+  margin-left: auto;
+}
+.claim-list-amount {
+  font-size: 18px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.claim-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 32px;
+  align-items: start;
+}
+.claim-form {
+  display: grid;
+  gap: 24px;
+}
+.claim-amount {
+  max-width: 280px;
+}
+.account-form-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+.claim-documents {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  margin: 24px 0;
+  gap: 12px;
+}
+.claim-documents li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #f7f7f3;
+  border-radius: 8px;
+  padding: 12px;
+}
+.claim-documents li > svg {
+  flex-shrink: 0;
+  color: #53616b;
+}
+.claim-documents li > div {
+  min-width: 0;
+  flex: 1;
+}
+.claim-documents strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 500;
+}
+.claim-documents span {
+  display: block;
+  font-size: 11px;
+  color: #53616b;
+  margin-top: 3px;
+}
+.claim-documents .icon-button,
+.claim-upload .icon-button {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+.claim-upload-target {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #fbfbf9;
+  border: 1px dashed #8a97a1;
+  border-radius: 12px;
+  min-height: 152px;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 24px;
+  color: #53616b;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+.claim-upload-target:hover {
+  background: #edf1ff;
+  border-color: #244cd8;
+}
+.claim-upload-target strong {
+  font-size: 14px;
+  color: #244cd8;
+  font-weight: 600;
+}
+.claim-upload-target span {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.claim-upload {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #dce1e3;
+  border-radius: 10px;
+  margin-top: 24px;
+}
+.claim-upload > div {
+  flex: 1;
+  min-width: 0;
+}
+.claim-upload p {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.claim-upload > svg {
+  flex-shrink: 0;
+  color: #53616b;
+}
+.claim-upload progress {
+  width: 100%;
+  height: 6px;
+  display: block;
+  margin-top: 12px;
+  accent-color: #244cd8;
+}
+.claim-upload-failed {
+  border-color: #ebc8cd;
+  background: #fbecee;
+}
+.claim-upload-failed .account-text-link {
+  margin-top: 8px;
+  color: #a92e38;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.ops-search {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin: 32px 0;
+}
+.ops-search > .field {
+  flex: 1;
+  max-width: 560px;
+}
+.ops-search .field > div {
+  position: relative;
+}
+.ops-search .field > div > svg {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: #53616b;
+}
+.ops-search .input {
+  padding-left: 44px;
+}
+.ops-section {
+  margin: 36px 0;
+}
+.ops-table-wrap {
+  overflow-x: auto;
+}
+.ops-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.ops-table th {
+  font-size: 12px;
+  font-weight: 500;
+  color: #53616b;
+  background: #fbfbf9;
+}
+.ops-table th,
+.ops-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e8ea;
+}
+.ops-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.ops-table td strong {
+  display: block;
+  font-weight: 500;
+}
+.ops-table small {
+  display: block;
+  font-size: 12px;
+  color: #53616b;
+  margin-top: 4px;
+}
+.ops-table .button {
+  font-size: 12px;
+  padding: 8px 12px;
+  white-space: nowrap;
+  min-height: 40px;
+}
+.ops-empty {
+  text-align: center;
+  padding: 32px;
+  color: #53616b;
+  font-size: 15px;
+}
+.ops-claims {
+  display: grid;
+  gap: 12px;
+}
+.ops-claim {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.ops-claim > div:first-child {
+  flex: 1;
+}
+.ops-claim .eyebrow {
+  font-size: 10px;
+  color: #53616b;
+}
+.ops-claim h3 {
+  margin: 4px 0 6px;
+}
+.ops-claim > div > span {
+  font-size: 14px;
+  color: #53616b;
+}
+.ops-claim-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.ops-claim-controls .field {
+  min-width: 180px;
+}
+.ops-claim-controls .button {
+  white-space: nowrap;
+}
+.ops-demo {
+  padding: 24px;
+  margin-top: 48px;
+}
+.ops-demo summary {
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ops-demo summary:after {
+  content: "+";
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 22px;
+}
+.ops-demo[open] summary:after {
+  content: "−";
+}
+.ops-demo > p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #53616b;
+  margin: 16px 0;
+}
+.ops-demo > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.ops-demo a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  padding: 12px;
+  border: 1px solid #dee3e5;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #244cd8;
+}
+.ops-demo a:hover {
+  background: #edf1ff;
+}
+@media (max-width: 1023px) {
+  .checkout-layout,
+  .policy-detail-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+  }
+  .checkout-panel {
+    padding: 28px;
+  }
+  .checkout-summary {
+    padding: 24px;
+  }
+  .account-panel {
+    padding: 24px;
+  }
+  .claim-detail-layout {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 24px;
+  }
+  .policy-card-bottom {
+    align-items: flex-start;
+  }
+  .policy-card-bottom > div {
+    gap: 14px;
+  }
+  .account-order-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ops-claim {
+    flex-wrap: wrap;
+  }
+  .ops-claim-controls {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .ops-claim-controls .field {
+    flex: 1;
+  }
+  .ops-demo > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .account-page {
+    padding: 28px 0 56px;
+  }
+  .account-page h1,
+  .account-narrow h1 {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+  }
+  .account-page-header {
+    display: block;
+    margin-bottom: 24px;
+  }
+  .account-page-header > .button,
+  .account-page-header > .account-status {
+    margin-top: 24px;
+  }
+  .account-lead {
+    font-size: 16px;
+  }
+  .account-back {
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+  .account-narrow {
+    padding: 40px 0 64px;
+  }
+  .account-auth-form {
+    padding: 24px;
+  }
+  .checkout-layout,
+  .policy-detail-layout,
+  .claim-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .checkout-summary {
+    position: static;
+    order: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+    padding: 20px;
+  }
+  .checkout-summary > .eyebrow {
+    grid-column: 1/-1;
+  }
+  .checkout-summary > h2 {
+    font-size: 24px;
+    margin: 8px 0 16px;
+  }
+  .checkout-summary > dl {
+    grid-column: 1/-1;
+  }
+  .checkout-summary .checkout-total {
+    grid-column: 1/-1;
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+  .checkout-summary .checkout-total strong {
+    font-size: 30px;
+  }
+  .checkout-summary .account-security,
+  .checkout-summary .account-summary-demo {
+    grid-column: 1/-1;
+  }
+  .checkout-main {
+    order: 1;
+  }
+  .checkout-expired .checkout-main {
+    order: 0;
+  }
+  .checkout-expired .checkout-summary {
+    order: 1;
+  }
+  .checkout-summary .account-summary-demo {
+    margin-top: 12px;
+  }
+  .checkout-panel {
+    padding: 24px 20px;
+  }
+  .checkout-panel h1 {
+    font-size: 28px;
+  }
+  .account-form-grid {
+    gap: 18px 14px;
+  }
+  .account-page .field {
+    font-size: 13px;
+  }
+  .account-page .field .input {
+    font-size: 16px;
+  }
+  .traveler-forms {
+    margin: 24px 0;
+    gap: 28px;
+  }
+  .account-review-travelers > .account-section-heading {
+    align-items: flex-start;
+  }
+  .account-review-travelers > .account-section-heading .account-text-link {
+    max-width: 120px;
+    text-align: right;
+  }
+  .account-state > h1 {
+    font-size: 28px;
+  }
+  .account-timeline h3 {
+    margin-bottom: 22px;
+  }
+  .account-tabs {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .account-tabs > a {
+    font-size: 14px;
+  }
+  .account-identity {
+    width: 100%;
+    order: -1;
+    justify-content: space-between;
+    padding-bottom: 8px;
+  }
+  .account-identity span {
+    max-width: 70%;
+  }
+  .account-empty {
+    padding: 52px 22px;
+  }
+  .account-empty h2 {
+    font-size: 24px;
+  }
+  .account-order-row {
+    padding: 16px;
+    gap: 14px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+  }
+  .account-order-icon {
+    width: 36px;
+    height: 40px;
+  }
+  .account-order-row h3 {
+    font-size: 17px;
+  }
+  .account-order-row > .account-status {
+    margin: 0;
+    grid-column: 2;
+    justify-self: start;
+  }
+  .account-order-row > .button {
+    grid-column: 1/-1;
+    justify-content: center;
+    width: 100%;
+  }
+  .policy-card {
+    padding: 22px;
+  }
+  .policy-card-top {
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+  .policy-card-top .eyebrow {
+    font-size: 10px;
+    max-width: 50%;
+    overflow-wrap: anywhere;
+  }
+  .policy-card-main {
+    display: block;
+  }
+  .policy-card-main h2 {
+    font-size: 28px;
+  }
+  .policy-card-dates {
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .policy-card-plan {
+    padding: 16px 0 0;
+    border: 0;
+    gap: 10px;
+  }
+  .policy-card-plan strong {
+    font-size: 14px;
+  }
+  .policy-card-bottom {
+    display: block;
+    margin-top: 22px;
+    padding-top: 18px;
+  }
+  .policy-card-bottom > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 18px;
+    gap: 18px 8px;
+  }
+  .policy-card-bottom a {
+    font-size: 12px;
+    justify-content: flex-start;
+  }
+  .policy-card-bottom a.button {
+    grid-column: 1/-1;
+    justify-content: center;
+    min-height: 44px;
+  }
+  .policy-detail-layout {
+    margin-top: 24px;
+  }
+  .account-panel {
+    padding: 24px 20px;
+  }
+  .account-panel h2 {
+    font-size: 22px;
+  }
+  .account-panel .account-feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+  .account-coverage dl > div {
+    font-size: 14px;
+    gap: 16px;
+  }
+  .claim-list-card {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 20px;
+    padding: 20px;
+    gap: 12px;
+  }
+  .claim-list-icon {
+    width: 40px;
+    height: 48px;
+  }
+  .claim-list-card h2 {
+    font-size: 18px;
+  }
+  .claim-list-card p {
+    font-size: 12px;
+  }
+  .claim-list-card > .account-status {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    justify-self: start;
+  }
+  .claim-list-amount {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 17px;
+  }
+  .claim-list-card > svg {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .claim-form .account-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .claim-form {
+    gap: 20px;
+  }
+  .claim-amount {
+    max-width: none;
+  }
+  .claim-detail-layout aside {
+    margin-top: 8px;
+  }
+  .ops-search {
+    gap: 10px;
+  }
+  .ops-search .button {
+    min-width: 80px;
+    padding: 12px;
+  }
+  .ops-search label > span {
+    font-size: 12px;
+  }
+  .ops-table th,
+  .ops-table td {
+    padding: 14px;
+  }
+  .ops-table th {
+    white-space: nowrap;
+  }
+  .ops-table td {
+    min-width: 130px;
+  }
+  .ops-claim {
+    padding: 20px;
+    gap: 16px;
+  }
+  .ops-claim-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ops-demo {
+    padding: 20px;
+  }
+  .ops-demo > div {
+    grid-template-columns: 1fr;
+  }
+  .account-form-actions > .button {
+    width: 100%;
+  }
+}
+@media (max-width: 389px) {
+  .account-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .account-coverage dl > div {
+    gap: 12px;
+  }
+  .account-coverage dt {
+    max-width: 52%;
+  }
+  .account-consent {
+    font-size: 13px;
+  }
+  .policy-card {
+    padding: 20px;
+  }
+  .account-auth-form {
+    padding: 20px;
+  }
+}
+.account-page {
+  width: min(1200px, calc(100% - 64px));
+}
+.account-narrow {
+  width: min(480px, calc(100% - 64px));
+}
+.account-exclusions ul {
+  padding-left: 18px;
+  margin-top: 10px;
+  color: #53616b;
+}
+.account-exclusions li + li {
+  margin-top: 4px;
+}
+.claim-upload-target:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+@media (max-width: 767px) {
+  .account-page {
+    width: calc(100% - 40px);
+  }
+  .account-narrow {
+    width: min(480px, calc(100% - 40px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+  .claim-list-card,
+  .claim-upload-target {
+    transition: none;
+  }
+}
+
+/* Account product surfaces share the site's control and elevation tokens. */
+.account-page {
+  padding-top: 56px;
+}
+.account-page .panel,
+.account-auth-form {
+  border-color: transparent;
+  border-radius: var(--radius-card, 24px);
+  box-shadow: var(--shadow-card, 0 4px 20px rgb(24 35 46 / 4%));
+}
+.account-page .account-lead {
+  color: var(--ink-soft, #53616b);
+}
+.account-page .account-panel {
+  padding: 32px;
+}
+.account-feature-icon,
+.account-auth-mark {
+  border-radius: 50%;
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+}
+.account-auth-mark {
+  width: 72px;
+  height: 72px;
+  color: var(--on-brand, #fff);
+  background: var(--ink, #18232e);
+}
+.account-narrow h1 {
+  font-size: 42px;
+  letter-spacing: -.045em;
+}
+.account-auth-form {
+  padding: 32px;
+  gap: 22px;
+}
+.account-auth-form .field > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 550;
+}
+.account-auth-form .otp-input {
+  min-height: 68px;
+  font-size: 30px;
+  letter-spacing: .28em;
+  text-align: center;
+}
+.account-auth-form .field > small {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.account-notice {
+  border-radius: var(--radius-control, 16px);
+  padding: 18px 20px;
+}
+.account-status {
+  padding: 6px 12px;
+  font-size: 12px;
+  letter-spacing: .01em;
+}
+.account-back {
+  min-height: 40px;
+  margin-bottom: 24px;
+  gap: 10px;
+  font-weight: 500;
+}
+.account-tabs {
+  border-bottom: 0;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+.account-tabs > a {
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 999px;
+  margin: 0;
+  color: var(--ink-soft, #53616b);
+}
+.account-tabs > a[aria-current] {
+  background: var(--surface, #fff);
+  color: var(--ink, #18232e);
+  box-shadow: 0 2px 8px rgb(24 35 46 / 5%);
+}
+.account-tabs > a > span {
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+}
+.account-identity {
+  padding-bottom: 0;
+  gap: 10px;
+}
+.account-identity .account-user-avatar {
+  width: 32px;
+  height: 32px;
+  max-width: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--ink, #18232e);
+  color: var(--on-brand, #fff);
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.account-identity button {
+  min-height: 40px;
+  padding: 6px 8px;
+}
+
+/* The wallet is built around actual journeys and their next useful action. */
+.wallet-header {
+  margin-bottom: 36px;
+}
+.wallet-header h1 {
+  font-size: 56px;
+  letter-spacing: -.05em;
+  margin: 14px 0 18px;
+}
+.wallet-header .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wallet-brand-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--brand, #244cd8);
+  border-radius: 50%;
+}
+.wallet-quick-actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+.wallet-quick-actions > a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 20px 24px;
+  border-radius: var(--radius-card, 24px);
+  background: var(--surface-muted, #eef0ec);
+  transition: background var(--duration-fast, 150ms);
+}
+.wallet-quick-actions > a:hover {
+  background: var(--surface-soft, #e7ebe5);
+}
+.wallet-quick-actions > a > span {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface, #fff);
+  color: var(--ink, #18232e);
+  flex-shrink: 0;
+}
+.wallet-quick-actions strong {
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.wallet-quick-actions > a > svg {
+  margin-left: auto;
+  color: var(--ink-soft, #53616b);
+}
+.wallet-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+.wallet-section-title > h2 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: -.03em;
+}
+.wallet-section-title > span {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface-soft, #e7ebe5);
+  font-size: 12px;
+  font-weight: 600;
+}
+.account-pending-list {
+  margin-bottom: 44px;
+}
+.account-order-row {
+  border: 0;
+  border-radius: var(--radius-card, 24px);
+  padding: 24px;
+  gap: 24px;
+  box-shadow: var(--shadow-card, 0 4px 20px rgb(24 35 46 / 4%));
+}
+.account-order-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+}
+.account-order-copy {
+  flex: 1;
+  min-width: 0;
+}
+.account-order-copy h3 {
+  font-size: 21px;
+  letter-spacing: -.025em;
+}
+.account-order-copy p {
+  margin-top: 6px;
+}
+.account-order-state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  margin-left: auto;
+}
+.account-order-state > span:last-child:not(.account-status) {
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.03em;
+}
+.account-order-row .button {
+  min-height: 48px;
+  font-size: 14px;
+}
+.order-progress {
+  display: flex;
+  gap: 4px;
+  max-width: 132px;
+  margin-top: 14px;
+}
+.order-progress > span {
+  height: 3px;
+  flex: 1;
+  border-radius: 5px;
+  background: var(--surface-muted, #eef0ec);
+}
+.order-progress > .complete {
+  background: var(--brand, #244cd8);
+}
+.policy-list {
+  gap: 24px;
+}
+.policy-card {
+  padding: 32px;
+  overflow: hidden;
+  border-radius: var(--radius-card, 24px);
+}
+.policy-card-top {
+  margin-bottom: 32px;
+}
+.policy-card-plan {
+  padding: 0;
+  border: 0;
+  gap: 12px;
+}
+.policy-card-plan > .policy-plan-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+}
+.policy-card-featured .policy-card-plan > .policy-plan-icon {
+  background: var(--brand, #244cd8);
+  color: var(--on-brand, #fff);
+}
+.policy-card-plan strong {
+  font-size: 17px;
+}
+.policy-card-plan span {
+  font-size: 13px;
+}
+.policy-card-main {
+  align-items: center;
+  gap: 32px;
+}
+.policy-card-main > div:first-child {
+  min-width: 0;
+}
+.policy-card-main h2 {
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  margin-bottom: 18px;
+  overflow-wrap: anywhere;
+}
+.policy-card-dates {
+  font-size: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.travel-date-stamp {
+  min-width: 92px;
+  min-height: 112px;
+  border-radius: 20px;
+  background: var(--surface-muted, #eef0ec);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  flex-shrink: 0;
+}
+.travel-date-stamp > span {
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-soft, #53616b);
+}
+.travel-date-stamp > strong {
+  font-size: 42px;
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+.policy-card-bottom {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line, #dee3e5);
+  gap: 20px;
+}
+.policy-card-bottom > .policy-pass-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+.policy-card-travelers {
+  overflow-wrap: anywhere;
+}
+.policy-pass-reference {
+  font-size: 10px;
+  letter-spacing: .09em;
+  color: var(--ink-soft, #53616b);
+}
+.policy-card-bottom > .policy-card-actions {
+  gap: 20px;
+  flex-shrink: 0;
+}
+.policy-card-actions a {
+  min-height: 44px;
+}
+.policy-card-actions a.button {
+  min-height: 48px;
+  padding: 10px 18px;
+  background: var(--surface-muted, #eef0ec);
+  border: 0;
+  font-size: 14px;
+}
+.policy-card-actions a.button:hover {
+  background: var(--surface-soft, #e7ebe5);
+}
+.account-page .policy-card-past {
+  background: transparent;
+  border: 1px solid var(--line, #dee3e5);
+  box-shadow: none;
+}
+.policy-card-past .policy-card-top {
+  margin-bottom: 24px;
+}
+.policy-card-past .policy-card-main h2 {
+  font-size: 30px;
+}
+.policy-card-past .travel-date-stamp {
+  min-height: 92px;
+}
+.policy-card-past .travel-date-stamp > strong {
+  font-size: 32px;
+}
+.account-empty {
+  padding: 80px 32px;
+}
+.account-empty h2 {
+  font-size: 34px;
+  letter-spacing: -.04em;
+}
+.account-empty-art {
+  background: var(--surface-muted, #eef0ec);
+  border: 0;
+  color: var(--ink, #18232e);
+  margin-bottom: 20px;
+}
+
+/* A policy keeps the same travel-pass identity, with documents one tap away. */
+.policy-overview {
+  border-radius: var(--radius-card, 24px);
+  overflow: hidden;
+  box-shadow: var(--shadow-card, 0 4px 20px rgb(24 35 46 / 4%));
+}
+.policy-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink, #18232e);
+  color: var(--on-brand, #fff);
+  padding: 36px 40px 40px;
+  min-height: 300px;
+}
+.policy-hero-content {
+  position: relative;
+  z-index: 1;
+}
+.policy-hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+.policy-hero .eyebrow {
+  color: rgb(255 255 255 / 70%);
+  overflow-wrap: anywhere;
+}
+.policy-hero h1 {
+  font-size: 64px;
+  line-height: 1.02;
+  letter-spacing: -.05em;
+  margin: 0 0 16px;
+  max-width: 960px;
+  overflow-wrap: anywhere;
+}
+.policy-hero .account-lead {
+  color: rgb(255 255 255 / 74%);
+  margin-bottom: 30px;
+}
+.policy-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.policy-hero-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.policy-hero-meta > span:last-child {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgb(255 255 255 / 72%);
+}
+.policy-hero-globe {
+  position: absolute;
+  right: -32px;
+  top: 34px;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 3%);
+  color: rgb(255 255 255 / 15%);
+  transform: rotate(-18deg);
+  pointer-events: none;
+}
+.policy-hero-globe > span {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: 50%;
+}
+.policy-hero-globe > span:last-child {
+  width: 480px;
+  height: 480px;
+}
+.policy-overview .trip-summary {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  background: var(--surface, #fff);
+  padding: 24px 36px;
+}
+.policy-action-dock {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 180px));
+  justify-content: center;
+  gap: 28px;
+  margin: 30px auto 40px;
+}
+.policy-action-dock > a,
+.policy-action-dock > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 16px;
+  text-align: center;
+}
+.policy-action-dock > a > span,
+.policy-action-dock > button > span {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  background: var(--surface, #fff);
+  color: var(--ink, #18232e);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card, 0 4px 20px rgb(24 35 46 / 4%));
+  transition: background var(--duration-fast, 150ms), color var(--duration-fast, 150ms);
+}
+.policy-action-dock > a:hover > span,
+.policy-action-dock > button:hover:not(:disabled) > span {
+  background: var(--brand, #244cd8);
+  color: var(--on-brand, #fff);
+}
+.policy-action-dock strong {
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.policy-detail-layout {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  margin-top: 0;
+}
+.policy-detail-layout .account-stack > .account-panel > .account-section-heading h2 {
+  font-size: 28px;
+}
+.policy-page .account-coverage dl > div {
+  padding: 18px 0;
+  font-size: 16px;
+}
+.policy-page .account-coverage small {
+  font-size: 13px;
+}
+.insured-list {
+  gap: 24px;
+}
+.traveler-avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+  font-size: 15px;
+}
+.account-page .policy-support-panel {
+  background: var(--surface-muted, #eef0ec);
+  box-shadow: none;
+}
+.policy-support-panel .account-feature-icon {
+  background: var(--surface, #fff);
+}
+.policy-documents-panel .account-feature-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--surface-muted, #eef0ec);
+  margin-bottom: 28px;
+}
+.policy-documents-panel .account-feature-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1.5;
+}
+.policy-documents-panel > .muted {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .02em;
+}
+.policy-receipt > strong {
+  font-size: 48px;
+  font-weight: 550;
+  letter-spacing: -.05em;
+}
+
+/* Checkout and claims retain their state flow and gain the same component fit. */
+.checkout-panel {
+  padding: 40px;
+}
+.checkout-panel h1 {
+  font-size: 38px;
+  letter-spacing: -.04em;
+}
+.checkout-summary {
+  padding: 28px;
+  background: var(--surface-muted, #eef0ec);
+}
+.checkout-summary h2 {
+  font-size: 30px;
+}
+.checkout-total > strong {
+  font-size: 44px;
+  letter-spacing: -.045em;
+  font-weight: 550;
+}
+.traveler-forms legend > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-muted, #eef0ec);
+  color: var(--ink, #18232e);
+}
+.account-review-travelers {
+  padding: 20px;
+  background: var(--surface-muted, #eef0ec);
+  border-radius: 20px;
+}
+.account-success-mark,
+.account-pending-mark {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 16px;
+}
+.issuance-progress {
+  padding: 16px 20px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface-muted, #eef0ec);
+}
+.claim-list-card {
+  padding: 28px;
+  gap: 24px;
+}
+.claim-list-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface-muted, #eef0ec);
+}
+.claim-list-card h2 {
+  font-size: 24px;
+  letter-spacing: -.035em;
+}
+.claim-upload-target {
+  min-height: 180px;
+  background: var(--surface-muted, #eef0ec);
+  border-radius: 20px;
+  border-color: var(--input-border, #7c8791);
+  gap: 12px;
+}
+.claim-documents li {
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--surface-muted, #eef0ec);
+}
+.account-timeline li {
+  gap: 18px;
+  padding-bottom: 30px;
+}
+.account-timeline strong {
+  font-size: 15px;
+}
+.ops-search .field > div > svg {
+  top: 16px;
+}
+
+@media (max-width: 1023px) {
+  .wallet-header h1 {
+    font-size: 48px;
+  }
+  .wallet-quick-actions > a {
+    gap: 12px;
+    padding: 20px;
+  }
+  .wallet-quick-actions > a > svg {
+    display: none;
+  }
+  .policy-card-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .policy-card-bottom > .policy-card-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .policy-card-bottom .policy-pass-owner {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  .policy-detail-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px;
+  }
+  .policy-hero h1 {
+    font-size: 54px;
+  }
+  .account-order-row {
+    gap: 18px;
+  }
+  .account-order-row .button {
+    margin-left: 74px;
+  }
+}
+
+@media (max-width: 767px) {
+  .account-page {
+    padding-top: 32px;
+  }
+  .account-page .account-panel,
+  .account-auth-form {
+    padding: 24px;
+  }
+  .account-narrow h1 {
+    font-size: 34px;
+  }
+  .account-page-header {
+    margin-bottom: 28px;
+  }
+  .wallet-header h1 {
+    font-size: 40px;
+    margin-bottom: 14px;
+  }
+  .wallet-header > .button {
+    margin-top: 24px;
+  }
+  .account-tabs {
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .account-tabs > a {
+    padding: 10px 16px;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .account-identity {
+    justify-content: flex-start;
+    margin-bottom: 14px;
+  }
+  .account-identity > span:not(.account-user-avatar) {
+    max-width: 65%;
+  }
+  .account-identity > button {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .wallet-quick-actions {
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .wallet-quick-actions > a {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 18px 8px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  .wallet-quick-actions > a > span {
+    width: 48px;
+    height: 48px;
+  }
+  .wallet-quick-actions strong {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .wallet-section-title {
+    margin-bottom: 16px;
+  }
+  .wallet-section-title > h2 {
+    font-size: 22px;
+  }
+  .account-order-row {
+    grid-template-columns: 44px minmax(0, 1fr);
+    padding: 20px;
+    gap: 16px;
+  }
+  .account-order-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .account-order-copy h3 {
+    font-size: 20px;
+  }
+  .account-order-state {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    padding-top: 4px;
+  }
+  .account-order-state > span:last-child:not(.account-status) {
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+  .account-order-row .button {
+    margin-left: 0;
+    min-height: 48px;
+  }
+  .policy-card {
+    padding: 24px;
+  }
+  .policy-card-top {
+    margin-bottom: 28px;
+    gap: 14px;
+    align-items: center;
+  }
+  .policy-card-plan {
+    gap: 9px;
+    padding: 0;
+    min-width: 0;
+  }
+  .policy-plan-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  .policy-card-plan strong {
+    font-size: 15px;
+  }
+  .policy-card-plan span {
+    font-size: 11px;
+  }
+  .policy-card-top > .account-status {
+    font-size: 10px;
+    padding: 5px 9px;
+    max-width: 44%;
+    flex-shrink: 0;
+  }
+  .policy-card-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .policy-card-main h2 {
+    font-size: 30px;
+    line-height: 1.08;
+    margin-bottom: 14px;
+  }
+  .policy-card-dates {
+    gap: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: block;
+  }
+  .policy-card-dates > svg {
+    display: none;
+  }
+  .policy-card-dates > span {
+    margin: 0 4px;
+  }
+  .travel-date-stamp {
+    min-width: 64px;
+    min-height: 84px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  .travel-date-stamp > strong {
+    font-size: 30px;
+  }
+  .travel-date-stamp > span {
+    font-size: 9px;
+  }
+  .policy-card-bottom {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+  .policy-card-bottom > .policy-pass-owner {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    gap: 8px;
+  }
+  .policy-card-bottom > .policy-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .policy-card-actions a {
+    font-size: 12px;
+    min-width: 0;
+  }
+  .policy-card-actions a.button {
+    grid-column: 1 / -1;
+    min-height: 48px;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  .policy-card-past .policy-card-main h2 {
+    font-size: 26px;
+  }
+  .policy-card-past .travel-date-stamp {
+    min-height: 84px;
+  }
+  .account-empty {
+    padding: 56px 24px;
+  }
+  .account-empty h2 {
+    font-size: 28px;
+  }
+  .policy-hero {
+    min-height: 270px;
+    padding: 24px;
+  }
+  .policy-hero-top {
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  .policy-hero .eyebrow {
+    font-size: 10px;
+    max-width: 55%;
+  }
+  .policy-hero .account-status {
+    font-size: 10px;
+    padding: 5px 9px;
+    max-width: 48%;
+  }
+  .policy-hero h1 {
+    font-size: 42px;
+    line-height: 1.02;
+    margin-bottom: 14px;
+  }
+  .policy-hero .account-lead {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .policy-hero-meta {
+    gap: 12px 20px;
+    font-size: 13px;
+  }
+  .policy-hero-meta > span:last-child {
+    margin-left: 0;
+    flex-basis: 100%;
+    font-size: 11px;
+  }
+  .policy-hero-globe {
+    width: 220px;
+    height: 220px;
+    right: -90px;
+    top: 64px;
+  }
+  .policy-overview .trip-summary {
+    padding: 20px 24px;
+  }
+  .policy-action-dock {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 26px auto 32px;
+  }
+  .policy-action-dock > a > span,
+  .policy-action-dock > button > span {
+    width: 56px;
+    height: 56px;
+  }
+  .policy-action-dock strong {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .policy-detail-layout {
+    grid-template-columns: 1fr;
+  }
+  .policy-page .account-coverage dl > div {
+    font-size: 14px;
+    gap: 16px;
+  }
+  .policy-page .account-coverage small {
+    font-size: 12px;
+  }
+  .policy-documents-panel .account-feature-icon {
+    width: 64px;
+    height: 64px;
+  }
+  .policy-receipt > strong {
+    font-size: 42px;
+  }
+  .checkout-panel {
+    padding: 28px 24px;
+  }
+  .checkout-panel h1 {
+    font-size: 30px;
+  }
+  .checkout-summary {
+    padding: 24px;
+  }
+  .checkout-summary h2 {
+    font-size: 26px;
+  }
+  .checkout-total > strong,
+  .checkout-summary .checkout-total strong {
+    font-size: 38px;
+  }
+  .account-review-travelers {
+    padding: 16px;
+  }
+  .account-review-travelers .account-section-heading {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .account-review-travelers .account-section-heading .account-text-link {
+    max-width: none;
+    text-align: left;
+  }
+  .account-review-travelers > div:not(:first-child) {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .account-state > h1 {
+    font-size: 30px;
+  }
+  .account-notice {
+    padding: 16px;
+    font-size: 14px;
+  }
+  .claim-list-card {
+    padding: 24px;
+    gap: 12px;
+  }
+  .claim-list-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .claim-list-card h2 {
+    font-size: 20px;
+  }
+  .claim-upload-target {
+    min-height: 164px;
+  }
+}
+
+@media (max-width: 389px) {
+  .account-page .account-panel,
+  .account-auth-form,
+  .checkout-panel,
+  .policy-card {
+    padding: 22px;
+  }
+  .wallet-header h1 {
+    font-size: 36px;
+  }
+  .policy-hero h1 {
+    font-size: 38px;
+  }
+  .policy-hero {
+    padding: 24px 22px;
+  }
+  .policy-card-plan > div {
+    min-width: 0;
+  }
+  .wallet-quick-actions strong {
+    font-size: 12px;
+  }
+  .account-tabs > a {
+    padding: 10px 13px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wallet-quick-actions > a,
+  .policy-action-dock > a > span,
+  .policy-action-dock > button > span {
+    transition: none;
+  }
+}
+
+.account-page .field .field-error,
+.field .field-error {
+  color: var(--danger, #a92e38);
+}
+
+.claim-delete-draft { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; }
+.claim-delete-draft > button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+.button-danger { background: var(--danger, #ac2633); color: #fff; }
+.button-danger:hover { background: #87202b; }

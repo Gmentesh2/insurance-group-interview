@@ -1,0 +1,16 @@
+.platform-feedback { min-height: 70vh; display: flex; align-items: center; flex-direction: column; text-align: center; gap: 20px; padding-top: 72px; }
+.platform-feedback-art { display: grid; place-items: center; width: 112px; height: 112px; background: var(--selected); color: var(--brand); border-radius: 36px; margin-bottom: 12px; }
+.platform-feedback h1 { max-width: 740px; }
+.platform-feedback-description { max-width: 540px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.platform-feedback-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.platform-loading { min-height: 70vh; }
+.skeleton-title,.skeleton-description,.skeleton-navigation,.skeleton-panels span { background: var(--line); border-radius: 12px; }
+.skeleton-title { width: min(70%,520px); height: 48px; margin-bottom: 20px; }
+.skeleton-description { width: min(90%,640px); height: 20px; margin-bottom: 40px; }
+.skeleton-navigation { width: min(80%,360px); height: 44px; margin-bottom: 32px; border-radius: 24px; }
+.skeleton-panels { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.skeleton-panels > div { min-height: 240px; background: var(--surface); border-radius: 24px; padding: 28px; display: grid; gap: 20px; align-content: start; }
+.skeleton-panels span { height: 24px; }
+.skeleton-panels span:first-child { height: 56px; width: 56px; }
+.skeleton-panels span:last-child { width: 60%; }
+@media (max-width: 640px) { .platform-feedback { padding-top: 40px; } .platform-feedback-actions { width: 100%; } .platform-feedback-actions > * { width: 100%; } .skeleton-panels { grid-template-columns: 1fr; } .skeleton-panels > div:not(:first-child) { display: none; } }

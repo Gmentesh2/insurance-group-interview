@@ -1,0 +1,18 @@
+.assistant-page { max-width: 900px; }
+.assistant-page h1 { font-size: clamp(32px,4vw,48px); line-height: 1.1; letter-spacing: -.035em; }
+.assistant-privacy { color: var(--muted); line-height: 1.5; margin: 24px 0; }
+.assistant-conversation { display: grid; gap: 16px; padding: 24px; border-radius: 24px; background: var(--surface); min-height: 160px; margin: 24px 0; }
+.assistant-message { padding: 16px 20px; border-radius: 16px; background: var(--canvas); max-width: 95%; min-width: 0; }
+.assistant-user { background: var(--selected); justify-self: end; }
+.assistant-message strong { font-size: 14px; }
+.assistant-message p { margin-top: 8px; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
+.assistant-message nav { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; }
+.assistant-message nav a { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; color: var(--brand); }
+.assistant-form { display: grid; gap: 20px; }
+.assistant-form .field { margin: 0; }
+.assistant-form textarea { min-height: 112px; resize: vertical; padding: 14px 16px; }
+.assistant-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.assistant-policy-context { display: grid; gap: 12px; padding: 20px; border-radius: 20px; background: var(--surface); }
+.assistant-disclaimer { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 24px 0 12px; }
+.support-assistant-link { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; color: var(--brand); margin-top: 20px; }
+@media(max-width:767px){.assistant-conversation{padding:16px}.assistant-message{padding:12px;max-width:100%}.assistant-page .page-identity>img{width:64px}}

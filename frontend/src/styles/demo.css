@@ -1,0 +1,23 @@
+.demo-studio .page-intro { max-width: 760px; margin-bottom: 48px; }
+.demo-studio-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; gap: 64px; }
+.demo-scenarios > h2 { margin: 12px 0 28px; font-size: 30px; }
+.demo-scenario-group { border: 0; padding: 0; margin: 0 0 24px; min-width: 0; }
+.demo-scenario-group legend { font-size: 14px; color: var(--muted); font-weight: 600; padding: 0 0 10px; }
+.demo-scenario-group > div { display: grid; gap: 8px; }
+.demo-scenario-option { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 14px 18px; border-radius: 16px; background: var(--surface); border: 1px solid transparent; cursor: pointer; }
+.demo-scenario-option input { accent-color: var(--brand); width: 18px; height: 18px; flex-shrink: 0; }
+.demo-scenario-option > span { flex: 1; }
+.demo-scenario-option > svg { visibility: hidden; }
+.demo-scenario-option:has(:checked) { color: var(--brand); background: var(--selected); border-color: var(--brand); font-weight: 600; }
+.demo-scenario-option:has(:checked) > svg { visibility: visible; }
+.demo-scenario-option:has(:focus-visible) { outline: 2px solid var(--brand); outline-offset: 3px; }
+.demo-studio-safety { display: flex; gap: 12px; color: var(--muted); font-size: 14px; padding: 8px 0; }
+.demo-trip-column { min-width: 0; }
+.demo-expectation { display: flex; gap: 20px; padding: 28px; background: var(--ink); color: white; border-radius: 24px; margin-bottom: 28px; }
+.demo-expectation-icon { display: grid; place-items: center; border-radius: 16px; width: 48px; height: 48px; flex-shrink: 0; background: #ffffff16; }
+.demo-expectation .eyebrow { color: #c9d2db; }
+.demo-expectation h2 { font-size: 24px; margin: 8px 0 12px; }
+.demo-expectation p:not(.eyebrow) { color: #e0e6ec; line-height: 1.6; }
+.demo-trip-label { margin: 0 0 12px 4px; }
+@media (max-width: 900px) { .demo-studio-layout { gap: 32px; grid-template-columns: 1fr 1.2fr; } .demo-expectation { flex-direction: column; } }
+@media (max-width: 700px) { .demo-studio-layout { grid-template-columns: 1fr; } .demo-studio .page-intro { margin-bottom: 32px; } .demo-expectation { flex-direction: row; padding: 24px; gap: 16px; } .demo-expectation-icon { width: 40px; height: 40px; } .demo-scenarios > h2 { font-size: 26px; } }

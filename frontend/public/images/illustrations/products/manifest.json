@@ -1,0 +1,56 @@
+[
+  {
+    "product": "health",
+    "source": "exec-d9c2f428-2ff1-4f0a-90da-85b630c25b23.png",
+    "featuredBytes": 53312,
+    "thumbnailBytes": 8848
+  },
+  {
+    "product": "motor",
+    "source": "exec-108616ae-fb12-4060-abec-1cf509484253.png",
+    "featuredBytes": 67256,
+    "thumbnailBytes": 9622
+  },
+  {
+    "product": "home",
+    "source": "exec-2d6abb05-b91e-4791-98eb-d583318b096b.png",
+    "featuredBytes": 59664,
+    "thumbnailBytes": 8292
+  },
+  {
+    "product": "travel",
+    "source": "exec-83720265-87f8-4075-93ff-db2d5e57b5e8.png",
+    "featuredBytes": 37556,
+    "thumbnailBytes": 6096
+  },
+  {
+    "product": "personal_accident",
+    "source": "exec-3ad7d7c2-2d2c-4163-8ec1-e4039b877e99.png",
+    "featuredBytes": 53280,
+    "thumbnailBytes": 7248
+  },
+  {
+    "product": "device",
+    "source": "exec-1a41dc8f-9406-4c01-b0f7-65437af33c1c.png",
+    "featuredBytes": 35520,
+    "thumbnailBytes": 5952
+  },
+  {
+    "product": "cyber",
+    "source": "exec-61761336-387f-4640-8cf0-33bf6024f078.png",
+    "featuredBytes": 38830,
+    "thumbnailBytes": 6312
+  },
+  {
+    "product": "purchase_protection",
+    "source": "exec-c03b0868-4603-46e9-97cc-23e3c8876930.png",
+    "featuredBytes": 39838,
+    "thumbnailBytes": 6924
+  },
+  {
+    "product": "rental_car",
+    "source": "exec-9f3b2270-f2d9-4800-b5ae-705d0ebb7433.png",
+    "featuredBytes": 59376,
+    "thumbnailBytes": 8642
+  }
+]

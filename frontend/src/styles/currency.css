@@ -1,0 +1,8 @@
+.currency-popup { width: 280px; max-width: calc(100vw - 32px); }
+.currency-positioner { z-index: 140; }
+.currency-menu-note { margin: 8px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.5; }
+.currency-menu-status { margin: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.currency-menu-status:empty { display: none; }
+.currency-menu-status button { min-height: 44px; color: var(--brand); font-weight: 600; }
+.currency-settlement-note { color: var(--muted); font-size: 13px; line-height: 1.5; margin-top: 12px; }
+.money-display { display: inline; white-space: nowrap; font-variant-numeric: tabular-nums; }

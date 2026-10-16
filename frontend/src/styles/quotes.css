@@ -1,0 +1,111 @@
+/* A continuous comparison surface keeps the price and cover doing the work. */
+.results-page.page-space { padding-top: 28px; }
+.results-page > .back-link { min-height: 44px; margin-bottom: 8px; }
+.results-page > .flow-progress { margin-block: 8px 24px; }
+.results-heading { margin-bottom: 24px; }
+.results-heading h1 { margin: 0; max-width: 860px; font-size: clamp(32px, 3.8vw, 48px); font-weight: 650; letter-spacing: -.045em; line-height: 1.04; }
+.results-heading > p { margin-top: 12px; max-width: 700px; color: var(--muted); font-size: 18px; line-height: 1.5; }
+.results-page > .trip-summary { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; padding: 16px 0; }
+.results-meta { align-items: baseline; margin: 24px 0 16px; gap: 24px; }
+.results-meta p { margin: 0; font-size: 14px; line-height: 1.5; text-align: right; }
+.results-meta .results-count { display: block; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 16px; font-weight: 600; white-space: nowrap; }
+.plan-grid { gap: 1px; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; margin-top: 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--line); }
+.plan-grid-single { max-width: 440px; grid-template-columns: 1fr; }
+.plan-card { border: 0; border-radius: 0; padding: 32px 28px 24px; background: var(--surface); box-shadow: none; }
+.plan-card:hover { border-color: transparent; }
+.plan-card.plan-selected { border-color: transparent; box-shadow: inset 0 0 0 2px var(--brand); }
+.plan-heading { min-height: 64px; }
+.plan-card h2 { font-size: 34px; font-weight: 650; line-height: 1.1; letter-spacing: -.035em; }
+.plan-provider { text-align: left; color: var(--muted); font-size: 12px; line-height: 1.4; margin: 10px 0 0; }
+.plan-description { font-size: 15px; line-height: 1.45; min-height: 44px; margin: 12px 0 20px; }
+.plan-price { gap: 2px; margin-bottom: 24px; }
+.plan-price strong { font-size: 48px; font-weight: 600; letter-spacing: -.045em; line-height: 1.05; }
+.plan-price > span { font-size: 14px; color: var(--ink); margin-top: 10px; }
+.plan-price small { font-size: 12px; line-height: 1.45; margin-top: 0; }
+.plan-select { min-height: 48px; justify-content: center; font-size: 16px; gap: 10px; }
+.plan-card .compare-checkbox { min-height: 48px; margin: 8px 0 16px; padding: 8px 0; border: 0; border-radius: 0; font-size: 14px; gap: 10px; color: var(--muted); }
+.plan-card .compare-checkbox:has(:checked) { color: var(--brand); background: transparent; }
+.compare-checkbox input { width: 18px; height: 18px; accent-color: var(--brand); }
+.plan-benefits { padding-top: 20px; gap: 16px; }
+.plan-benefits > h3 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; margin-bottom: 2px; }
+.benefit { font-size: 14px; gap: 10px; }
+.benefit > svg { flex-shrink: 0; color: var(--ink); }
+.benefit-excluded > svg, .benefit-unknown > svg { color: var(--muted); }
+.benefit-content { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; line-height: 1.4; }
+.benefit-content > strong { text-align: right; font-size: 14px; font-weight: 600; }
+.benefit-content > small { font-size: 12px; }
+/* Conditions open in place without hiding an excluded or unknown benefit. */
+.benefit-condition { grid-column: 1/-1; font-size: 13px; }
+.benefit-condition > summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; list-style: none; cursor: pointer; color: var(--brand); }
+.benefit-condition > summary::-webkit-details-marker { display: none; }
+.benefit-condition > summary svg { flex-shrink: 0; transition: transform 150ms ease; }
+.benefit-condition[open] > summary svg { transform: rotate(180deg); }
+.benefit-condition p { margin: 0; color: var(--muted); line-height: 1.5; }
+.plan-exclusions { margin-top: 24px; padding: 20px 0 12px; border-top: 1px solid var(--line); }
+.plan-exclusions h3 { font-size: 14px; margin-bottom: 8px; }
+.plan-exclusions p { font-size: 12px; line-height: 1.6; }
+.plan-details-trigger { min-height: 44px; font-size: 14px; justify-content: space-between; padding: 12px 0; border: 0; background: transparent; border-radius: 0; }
+.plan-details-trigger:hover { text-decoration: underline; text-underline-offset: 4px; background: transparent; }
+.results-disclaimer { display: grid; gap: 6px; justify-items: start; text-align: left; margin-top: 24px; font-size: 13px; }
+.results-disclaimer p:first-child { display: flex; align-items: center; gap: 8px; }
+.compare-tray { border-radius: 16px; padding: 14px 20px; bottom: max(20px, env(safe-area-inset-bottom)); }
+.compare-tray .button { min-height: 48px; font-size: 15px; }
+.compare-tray strong { font-size: 16px; }
+.selection-count { border-radius: 50%; width: 32px; height: 32px; font-size: 15px; }
+.details-dialog { padding: 32px; border: 0; border-radius: 24px; background: var(--surface); overscroll-behavior: contain; }
+.details-dialog .dialog-title { font-size: 36px; letter-spacing: -.035em; margin-top: 0; margin-right: 44px; }
+.details-dialog > .muted { font-size: 16px; }
+.details-dialog .dialog-close { min-width: 44px; min-height: 44px; background: var(--surface-muted, #eff1f5); border-radius: 50%; }
+.expanded-benefits { border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: transparent; border-radius: 0; padding: 24px 0; gap: 24px; }
+.plan-details-identity { color: var(--muted); font-size: 16px; margin: 0 44px 12px 0; }
+.terms-exclusions { font-size: 15px; }
+@media (max-width: 1100px) and (min-width: 768px) {
+  .plan-card { padding: 28px 20px 20px; }
+  .plan-heading { min-height: 86px; }
+  .benefit-content { grid-template-columns: 1fr; }
+  .benefit-content > strong { text-align: left; }
+  .plan-description { min-height: 66px; }
+  .plan-price strong { font-size: 42px; }
+}
+@media (max-width: 900px) and (min-width: 768px) {
+  .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .plan-grid-single { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .results-page.page-space { padding-top: 16px; }
+  .results-page > .back-link { margin-bottom: 8px; }
+  .results-heading { margin-bottom: 24px; }
+  .results-heading h1 { font-size: 32px; }
+  .results-heading > p { font-size: 16px; margin-top: 12px; }
+  .results-page > .trip-summary { padding: 16px 0; }
+  .results-meta { display: block; margin-top: 24px; }
+  .results-meta p { font-size: 13px; margin-top: 6px; text-align: left; }
+  .results-meta .results-count { display: block; }
+  .plan-grid { grid-template-columns: 1fr; gap: 1px; border-radius: 16px; }
+  .plan-card { padding: 28px 24px 20px; }
+  .plan-heading { min-height: 0; }
+  .plan-description { min-height: 0; margin: 16px 0 24px; }
+  .plan-card h2 { font-size: 32px; }
+  .plan-price strong { font-size: 44px; }
+  .plan-benefits { gap: 16px; }
+  .benefit-content { grid-template-columns: minmax(0, 1fr) auto; }
+  .benefit-content > strong { max-width: 140px; }
+  .compare-tray { display: grid; grid-template-columns: 1fr; gap: 10px; width: calc(100vw - 24px); padding: 14px 16px; bottom: max(12px, env(safe-area-inset-bottom)); }
+  .compare-tray > div:last-child { justify-content: space-between; }
+  .compare-tray strong { display: inline; font-size: 15px; }
+  .compare-tray .button { padding: 10px 18px; }
+  .compare-tray .button-ghost { display: inline-flex; }
+  .selection-count { width: 28px; height: 28px; font-size: 14px; }
+  .has-compare-tray { padding-bottom: 180px; }
+  .details-dialog { padding: 24px 20px; border-radius: 20px; width: calc(100vw - 20px); max-height: calc(100dvh - 24px); }
+  .details-dialog .dialog-title { font-size: 28px; margin-right: 38px; }
+  .details-dialog > .muted { font-size: 15px; }
+  .expanded-benefits { padding: 20px 0; }
+}
+
+.quote-recovery-page > .trip-summary { margin-bottom: 32px; }
+.quote-recovery { max-width: 880px; margin-inline: auto; padding: 56px 32px; }
+.quote-recovery h1 { max-width: 620px; }
+.quote-recovery > p:not(.eyebrow) { max-width: 540px; color: var(--muted); }
+.quote-recovery-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 640px) { .quote-recovery { padding: 36px 20px; } .quote-recovery-actions { width: 100%; } .quote-recovery-actions > * { width: 100%; } }
