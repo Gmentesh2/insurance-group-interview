@@ -12,6 +12,7 @@ import { CountryFlag } from '@/components/country-flag';
 import { DateInput } from '@/components/date-input';
 import { FormSelect } from '@/components/form-select';
 import { Input } from '@/components/ui';
+import { FormField } from '@/components/form-field';
 import { countryName } from '@/lib/countries';
 import { productFields, type ProductId } from './catalog';
 import { productErrorsAfterEdit, validateProductDetails, type ProductErrors, type ProductValues } from './validation';
@@ -88,16 +89,14 @@ export function ProductDetailsWidget({ product, onTravel, entry = false }: { pro
       <p className="product-required-hint">{t('fieldsRequired')}</p>
       {fields.map(field => {
         const inputId = `${id}-${field.key}`;
-        const a11y = { 'aria-invalid': !!errors[field.key], 'aria-describedby': [field.kind === 'date' ? `${inputId}-hint` : '', errors[field.key] ? `${inputId}-error` : ''].filter(Boolean).join(' ') || undefined };
-        return <div className={`field${field.span === 'half' ? ' product-field-half' : ''}`} key={field.key}>
-          <label htmlFor={inputId}>{t(`fields.${field.label ?? field.key}`)}</label>
-          <div className="product-field-input">{field.kind === 'country' ? <CountryPicker id={inputId} label={t(`fields.${field.label ?? field.key}`)} placeholder={t(`countryPlaceholders.${field.label ?? field.key}`)} name={field.key} value={values[field.key] ?? ''} required invalid={a11y['aria-invalid']} describedBy={a11y['aria-describedby']} onChange={value => update(field.key, value)} />
-            : field.kind === 'select' ? <FormSelect id={inputId} name={field.key} label={t(`fields.${field.label ?? field.key}`)} required invalid={a11y['aria-invalid']} describedBy={a11y['aria-describedby']} value={values[field.key] ?? ''} placeholder={t(`placeholders.${field.key}`)} options={(field.options ?? []).map(option => ({ value: option, label: t(`options.${option}`) }))} onValueChange={value => update(field.key, value)} />
-            : field.kind === 'date' ? <DateInput id={inputId} name={field.key} required {...a11y} value={values[field.key] ?? ''} onValueChange={value => update(field.key, value)} />
-            : <Input id={inputId} name={field.key} type="number" inputMode="numeric" required {...a11y} min={field.min} max={field.max} step={1} placeholder={field.example === undefined ? undefined : t('numberExample', { value: new Intl.NumberFormat(locale, { useGrouping: false }).format(field.example) })} value={values[field.key] ?? ''} onChange={event => update(field.key, event.target.value)} />}</div>
-          <div className="product-field-feedback">{field.kind === 'date' && <small id={`${inputId}-hint`}>{t(field.key === 'purchaseDate' ? 'purchaseDateHint' : field.key === 'endDate' ? 'endDateHint' : 'startDateHint')}</small>}
-          {errors[field.key] && <p className="field-error" id={`${inputId}-error`}>{t(errors[field.key], { min: field.min ?? 0, max: field.max ?? 0 })}</p>}</div>
-        </div>;
+        const hint = field.kind === 'date' ? t(field.key === 'purchaseDate' ? 'purchaseDateHint' : field.key === 'endDate' ? 'endDateHint' : 'startDateHint') : undefined;
+        const error = errors[field.key] ? t(errors[field.key], { min: field.min ?? 0, max: field.max ?? 0 }) : undefined;
+        return <FormField key={field.key} id={inputId} label={t(`fields.${field.label ?? field.key}`)} required hint={hint} error={error} className={field.span === 'half' ? 'product-field-half' : undefined}>
+          {control => field.kind === 'country' ? <CountryPicker id={control.id} required={control.required} label={t(`fields.${field.label ?? field.key}`)} placeholder={t(`countryPlaceholders.${field.label ?? field.key}`)} name={field.key} value={values[field.key] ?? ''} invalid={control['aria-invalid']} describedBy={control['aria-describedby']} onChange={value => update(field.key, value)} />
+            : field.kind === 'select' ? <FormSelect id={control.id} required={control.required} name={field.key} label={t(`fields.${field.label ?? field.key}`)} invalid={control['aria-invalid']} describedBy={control['aria-describedby']} value={values[field.key] ?? ''} placeholder={t(`placeholders.${field.key}`)} options={(field.options ?? []).map(option => ({ value: option, label: t(`options.${option}`) }))} onValueChange={value => update(field.key, value)} />
+            : field.kind === 'date' ? <DateInput {...control} name={field.key} value={values[field.key] ?? ''} onValueChange={value => update(field.key, value)} />
+            : <Input {...control} name={field.key} type="number" inputMode="numeric" min={field.min} max={field.max} step={1} value={values[field.key] ?? ''} onChange={event => update(field.key, event.target.value)} />}
+        </FormField>;
       })}
       <button className="button" type="submit">{t('review')}<ArrowRight size={18} aria-hidden="true" /></button>
       <details className="product-quote-context"><summary>{t('beforeQuote')}</summary><p>{t(`${product}.checks`)}</p></details>

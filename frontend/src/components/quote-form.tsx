@@ -38,7 +38,6 @@ export function QuoteForm({
   showProgress?: boolean;
 }) {
   const t = useTranslations("quote"),
-    products = useTranslations("products"),
     l = useTranslations("landing"),
     flow = useTranslations("flow"),
     locale = useLocale(),
@@ -350,7 +349,6 @@ export function QuoteForm({
                     min="0"
                     max="100"
                     required
-                    placeholder={products('numberExample', { value: 30 })}
                     value={Number.isNaN(person.age) ? "" : person.age}
                     onChange={(e) =>
                       update({

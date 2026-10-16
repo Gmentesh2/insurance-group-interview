@@ -113,7 +113,7 @@ svg { flex-shrink: 0; }
 .icon-surface { width: 52px; height: 52px; display: inline-grid; flex-shrink: 0; place-items: center; background: var(--selected); color: var(--brand); border-radius: 16px; }
 .input {
   width: 100%; min-height: 52px; background: var(--surface-soft); border: 1px solid var(--input-border);
-  border-radius: var(--radius-control); padding: 12px 16px; line-height: 1.4; min-width: 0;
+  border-radius: var(--radius-control); padding: 12px 16px; font-size: 16px; line-height: 1.4; min-width: 0;
   transition: background var(--duration-fast), border-color var(--duration-fast), box-shadow var(--duration-fast);
 }
 .input:hover { background: var(--surface); border-color: var(--muted); }
@@ -124,6 +124,11 @@ svg { flex-shrink: 0; }
 [aria-invalid="true"] { scroll-margin-block: 40px; }
 .label, .field > label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
 .field { min-width: 0; }
+.form-field-control { min-width: 0; }
+.form-field-feedback { display: grid; gap: 6px; margin-top: 8px; }
+.form-field-feedback:empty { display: none; }
+.form-field-feedback > small { font-size: 14px; line-height: 1.4; color: var(--muted); }
+.form-field-feedback .field-error { margin: 0; }
 fieldset { border: 0; min-width: 0; padding: 0; margin: 0; }
 legend { padding: 0; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
 .notice { padding: 16px; display: flex; align-items: flex-start; gap: 12px; background: var(--selected); color: var(--ink); border: 1px solid transparent; border-radius: 16px; font-size: 14px; line-height: 1.6; }

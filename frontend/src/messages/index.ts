@@ -1,3 +1,4 @@
+import { authScreenMessages } from './auth-screen';
 import { assistantMessages } from './assistant';
 import { passwordAuthMessages } from './password-auth';
 import { homepageMessages } from './homepage';
@@ -24,6 +25,7 @@ import { policyDesignMessages } from "./policy-design";
 /** Use the same catalog for server translations and the client provider. */
 export function messagesFor(locale: Locale) {
   return {
+    authScreen: authScreenMessages[locale],
     assistant: assistantMessages[locale],
     passwordAuth: passwordAuthMessages[locale],
     currency: currencyMessages[locale],

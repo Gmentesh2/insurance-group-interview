@@ -8,7 +8,8 @@ import { ArrowRight, CircleAlert, LoaderCircle } from "lucide-react";
 import { api, RequestError } from "@/lib/client";
 import type { Order, Traveler } from "@/lib/contracts";
 import { deletePrivateDraft, getPrivateDraft, getPrivateSessionEpoch, setPrivateDraft } from "@/lib/private-drafts";
-import { dateForInput, dateInputToIso } from "@/lib/date-input";
+import { DateInput } from "./date-input";
+import { Input } from "./ui";
 import { ErrorNotice, errorCode } from "./account-shared";
 import { contactEmailSchema } from "@/lib/guest-validation";
 
@@ -54,7 +55,6 @@ export function TravelerForm({
 }) {
   const t = useTranslations("account");
   const design = useTranslations("checkoutDesign");
-  const flow = useTranslations("flow");
   const recovery = useTranslations("checkoutRecovery");
   const guest = useTranslations("guest");
   const [contactEmail, setContactEmail] = useState(() => getPrivateDraft<string>(order.userId, `contact:${order.id}`) ?? order.contactEmail ?? "");
@@ -185,31 +185,27 @@ export function TravelerForm({
                   return (
                     <label className={`field${birthDate ? " checkout-birth-date" : ""}`} key={key} htmlFor={id}>
                       <span>{t(birthDate ? "dob" : key)}<FieldRequirement /></span>
-                      <input
+                      {birthDate ? <DateInput
                         id={id}
                         name={path}
-                        className="input"
-                        type="text"
-                        inputMode={birthDate ? "numeric" : undefined}
-                        placeholder={birthDate ? flow("datePlaceholder") : undefined}
-                        value={birthDate ? dateForInput(person[key]) : person[key]}
-                        onChange={(event) =>
-                          update(index, key, birthDate ? dateInputToIso(event.target.value) : event.target.value)
-                        }
-                        autoComplete={
-                          index === 0
-                            ? birthDate
-                              ? "bday"
-                              : key === "firstName"
-                                ? "given-name"
-                                : "family-name"
-                            : "off"
-                        }
                         required
-                        maxLength={birthDate ? 10 : 80}
+                        value={person.dateOfBirth}
+                        onValueChange={value => update(index, 'dateOfBirth', value)}
+                        autoComplete={index === 0 ? 'bday' : 'off'}
                         aria-invalid={issue ? true : undefined}
                         aria-describedby={describedBy || undefined}
-                      />
+                      /> : <Input
+                        id={id}
+                        name={path}
+                        type="text"
+                        value={person[key]}
+                        onChange={event => update(index, key, event.target.value)}
+                        autoComplete={index === 0 ? key === 'firstName' ? 'given-name' : 'family-name' : 'off'}
+                        required
+                        maxLength={80}
+                        aria-invalid={issue ? true : undefined}
+                        aria-describedby={describedBy || undefined}
+                      />}
                       {birthDate && (
                         <small id={`${id}-hint`}>
                           {design("birthDateFormat")} {t("quotedAge", {

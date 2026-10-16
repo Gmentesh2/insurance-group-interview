@@ -108,7 +108,18 @@ export function AuthGate({
   const [session, setSession] = useState<AuthSession | null>(null);
   const [error, setError] = useState("");
   const [expired, setExpired] = useState(false);
-  const [signInSelected, setSignInSelected] = useState(false);
+  const [signInSelected, setSignInSelected] = useState(() =>
+    guestCheckout && typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("access") === "signin",
+  );
+  const chooseSignIn = (selected: boolean) => {
+    // Preserve only the public access choice across locale navigation and refresh.
+    const url = new URL(window.location.href);
+    if (selected) url.searchParams.set("access", "signin");
+    else url.searchParams.delete("access");
+    window.history.replaceState(window.history.state, "", url.href);
+    setSignInSelected(selected);
+  };
   const [recoverSignIn, setRecoverSignIn] = useState(false);
   const guest = useTranslations("guest");
   const sessionRequest = useRef(0);
@@ -173,7 +184,11 @@ export function AuthGate({
       </div>
     );
   if (!session) return <Loading workspace={path.startsWith(`/${locale}/account`)} />;
-  if (!session.user) return <>{expired && <div className="container session-recovery-notice"><ErrorNotice code="AUTH_REQUIRED" /></div>}{unauthenticatedContext}{guestCheckout && !expired && !signInSelected ? <GuestCheckout key={locale} onGuest={accept} onSignIn={() => setSignInSelected(true)} /> : <>{guestCheckout && !expired && <div className="account-narrow"><button className="button button-ghost" onClick={() => setSignInSelected(false)}>{guest("back")}</button></div>}<SignIn onSuccess={accept} /></>}</>;
+  if (!session.user) {
+    const notice = expired ? <ErrorNotice code="AUTH_REQUIRED" /> : null;
+    if (guestCheckout && !expired && !signInSelected) return <>{unauthenticatedContext}<GuestCheckout key={locale} onGuest={accept} onSignIn={() => chooseSignIn(true)} /></>;
+    return <SignIn onSuccess={accept} context={<>{notice}{unauthenticatedContext}{guestCheckout && !expired && <button className="account-text-link" onClick={() => chooseSignIn(false)}>{guest("back")}</button>}</>} />;
+  }
   return <Fragment key={session.user.id}>{children(session.user)}</Fragment>;
 }
 

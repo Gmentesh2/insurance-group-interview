@@ -38,9 +38,7 @@
 .product-details-widget form > .field, .product-details-widget form > .button, .product-details-widget form > .product-required-hint, .product-details-widget form > .product-quote-context, .product-preview-notice { grid-column: 1 / -1; min-width: 0; }
 .product-details-widget form > .product-field-half { grid-column: auto; grid-row: span 3; display: grid; grid-template-rows: subgrid; row-gap: 8px; }
 .product-field-half label { align-self: end; }
-.product-field-input { min-width: 0; }
-.product-field-feedback { display: grid; gap: 4px; }
-.product-field-feedback:empty { display: none; }
+.product-field-half > .form-field-feedback { margin-top: 0; }
 .product-details-widget .field label { font-size: 14px; }
 .product-details-widget .form-select-value { hyphens: auto; }
 .product-preview-notice { font-size: 14px; line-height: 1.5; color: var(--muted); }
@@ -68,7 +66,7 @@
 .landing-page .quote-form { padding: 24px; gap: 16px; }
 .landing-page .quote-form .flow-progress { margin: 0 0 4px; }
 .landing-page .quote-form .flow-form-hint { margin: 0; }
-.landing-page .quote-form .field-requirement { display: none; }
+.landing-page .field-requirement { display: none; }
 .landing-page .quote-form-heading h2 { font-size: 24px; margin-bottom: 4px; }
 .landing-page .quote-form .flow-progress-steps { margin-top: 8px; }
 .landing-page .quote-form .flow-step-label { min-height: 32px; }

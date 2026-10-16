@@ -1,0 +1,5 @@
+export const authScreenMessages={
+ en:{welcome:'Welcome back',intro:'Enter the email address and password for your Insurance Group account.',newAccount:'Don’t have an account?',existingAccount:'Already have an account?',accountTitle:'Your travel space',accountDescription:'Read your cover, keep your documents and follow a claim. All in one account.',backSignIn:'Back to sign in'},
+ de:{welcome:'Willkommen zurück',intro:'Geben Sie die E-Mail-Adresse und das Passwort Ihres Insurance Group Kontos ein.',newAccount:'Sie haben noch kein Konto?',existingAccount:'Sie haben bereits ein Konto?',accountTitle:'Ihr Reisebereich',accountDescription:'Prüfen Sie Ihren Schutz, finden Sie Dokumente und verfolgen Sie Schäden. Alles in einem Konto.',backSignIn:'Zurück zur Anmeldung'},
+ ru:{welcome:'С возвращением',intro:'Введите email и пароль вашего аккаунта Insurance Group.',newAccount:'Ещё нет аккаунта?',existingAccount:'Уже есть аккаунт?',accountTitle:'Ваши путешествия',accountDescription:'Покрытие, документы и статус заявления — в одном аккаунте.',backSignIn:'Назад ко входу'},
+} as const;

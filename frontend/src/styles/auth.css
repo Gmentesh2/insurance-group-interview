@@ -1,33 +1,3 @@
-/* Authentication is a focused access screen, separate from insurance progress. */
-.sign-in-layout {
-  width: 100%;
-  max-width: 536px;
-  margin: 64px auto 88px;
-  padding-inline: 24px;
-}
-.sign-in-main { background: var(--surface); padding: 36px; border-radius: 24px; min-width: 0; border: 1px solid var(--line); }
-.sign-in-heading { display: flex; align-items: center; gap: 12px; }
-.sign-in-heading > svg { color: var(--brand); flex-shrink: 0; }
-.sign-in-main h1 { font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; }
-.sign-in-main .account-lead { font-size: 16px; margin: 16px 0 32px; max-width: none; line-height: 1.6; }
-.sign-in-main .account-auth-form { background: transparent; padding: 0; margin: 0; border: 0; border-radius: 0; box-shadow: none; gap: 20px; }
-.sign-in-main .account-auth-form .field > span { font-size: 14px; }
-.sign-in-main .account-auth-form .input { min-height: 56px; border-radius: 16px; background: var(--surface-soft); font-size: 16px; }
-.sign-in-main .account-auth-form .input:focus-visible { background: var(--surface); }
-.sign-in-main .account-auth-form .otp-input { font-size: 32px; text-align: center; letter-spacing: 0.3em; padding: 16px 12px 16px 20px; font-variant-numeric: tabular-nums; }
-.sign-in-main .account-notice { overflow-wrap: anywhere; font-size: 14px; border-radius: 16px; }
-.sign-in-main .account-security { margin: 4px 0 0; font-size: 14px; line-height: 1.4; }
-.sign-in-main .account-inbox { background: var(--surface-soft); padding: 16px; border-radius: 16px; font-size: 14px; }
-.sign-in-main .account-inbox a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
-.sign-in-main .lucide { stroke-width: 1.7; flex-shrink: 0; }
-.sign-in-main .button > .lucide { width: 20px; height: 20px; }
-.sign-in-main .button { min-height: 52px; white-space: normal; }
-@media (max-width: 767px) {
-  .sign-in-layout { padding-inline: 20px; margin: 32px auto 64px; }
-  .sign-in-main { padding: 28px 24px; border-radius: 24px; }
-  .sign-in-main h1 { font-size: 28px; overflow-wrap: anywhere; }
-}
-
 .guest-save-access { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); min-width: 0; }
 .guest-save-access h2 { font-size: 20px; line-height: 1.25; margin-bottom: 12px; }
 .guest-save-access p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-block: 12px; }
@@ -42,7 +12,57 @@
 .password-field > button { position: absolute; right: 6px; top: 6px; min-width: 44px; min-height: 44px; color: var(--muted); background: transparent; border: 0; }
 .password-auth-form > .account-text-link { min-height: 44px; justify-content: center; }
 .password-auth-form .field-error { margin-top: 6px; }
-.auth-card-navigation { margin: -12px 0 4px -12px; }
+.auth-card-navigation { margin: 0 0 20px -10px; }
 .auth-card-navigation .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; color: var(--ink); background: transparent; border-radius: 50%; }
 .auth-card-navigation .icon-button:hover { background: var(--selected); color: var(--brand); }
 .account-error-text { color: var(--danger, #a52130); font-size: 14px; line-height: 1.5; margin: 12px 0; overflow-wrap: anywhere; }
+
+/* Standalone access page: brand, flat form, one supporting product illustration. */
+body:has(.auth-screen) .site-header,
+body:has(.auth-screen) .site-footer { display: none; }
+.auth-screen { min-height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; background: var(--canvas); }
+.auth-screen-header { padding: 28px 40px; }
+.auth-screen-header > a { display: inline-flex; align-items: center; min-height: 44px; }
+.auth-screen-header .brand { font-size: 25px; }
+.auth-screen-content { display: grid; grid-template-columns: minmax(0,420px) minmax(0,280px); gap: 120px; align-items: center; justify-content: center; padding: 32px 40px 64px; }
+.auth-screen-form { min-width: 0; }
+.auth-screen-form h1 { font-size: 40px; line-height: 1.12; letter-spacing: -.035em; margin: 0; font-weight: 650; }
+.auth-screen-form > .account-lead { font-size: 18px; line-height: 1.5; color: var(--muted); margin: 16px 0 28px; max-width: 410px; }
+.auth-screen-form .password-auth-form { background: transparent; border: 0; border-radius: 0; padding: 0; margin: 0; box-shadow: none; gap: 20px; }
+.auth-screen-form .field > label { display: flex; align-items: baseline; gap: 4px; font-size: 14px; }
+.auth-screen-form .button { min-height: 52px; border-radius: 999px; white-space: normal; }
+.auth-screen-form .account-full { width: 100%; }
+.auth-screen-form .account-security { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; align-items: flex-start; }
+.auth-screen-form .account-security svg { flex-shrink: 0; margin-top: 2px; }
+.auth-mode-switch { display: grid; gap: 12px; margin-top: 4px; text-align: center; }
+.auth-mode-switch > p { font-size: 14px; color: var(--muted); margin: 0; }
+.auth-screen-form .auth-mode-switch .button-secondary { background: var(--surface-muted); border: 0; color: var(--ink); }
+.auth-screen-form .auth-mode-switch .button-secondary:hover { background: var(--line); }
+.auth-screen-aside { min-width: 0; text-align: center; }
+.auth-screen-aside > img { width: 280px; height: 224px; margin: 0 auto 16px; }
+.auth-screen-aside h2 { font-size: 24px; line-height: 1.2; letter-spacing: -.025em; margin: 0 0 12px; }
+.auth-screen-aside p { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 0; }
+.auth-screen-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; padding: 20px 40px 28px; }
+.auth-screen-footer > a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); font-size: 14px; }
+.auth-screen-footer > a:hover { color: var(--brand); }
+.auth-screen-footer .language-trigger { background: transparent; color: var(--muted); min-height: 44px; font-size: 14px; padding: 10px 0; }
+.auth-screen-context:empty { display: none; }
+.auth-screen-context .checkout-signin-context { width: 100%; margin: 0 0 24px; padding: 0; }
+.auth-screen-context .checkout-signin-selection { flex-wrap: wrap; }
+@media(max-width:900px) {
+ .auth-screen-content { grid-template-columns: minmax(0,400px) minmax(0,220px); gap: 48px; padding-inline: 32px; }
+ .auth-screen-aside > img { width: 220px; height: 180px; }
+}
+@media(max-width:767px) {
+ .auth-screen-header { padding: 20px 24px; }
+ .auth-screen-header .brand { font-size: 23px; }
+ .auth-screen-content { grid-template-columns: minmax(0,420px); gap: 56px; padding: 24px 24px 40px; align-content: start; }
+ .auth-screen-form h1 { font-size: 32px; }
+ .auth-screen-form > .account-lead { font-size: 16px; margin: 12px 0 28px; }
+ .auth-card-navigation { margin-bottom: 16px; }
+ .auth-screen-aside { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 8px 20px; text-align: left; align-items: center; padding-top: 24px; border-top: 1px solid var(--line); }
+ .auth-screen-aside > img { grid-row: span 2; width: 96px; height: 100px; margin: 0; }
+ .auth-screen-aside h2 { font-size: 20px; margin: 0; align-self: end; }
+ .auth-screen-aside p { font-size: 14px; align-self: start; }
+ .auth-screen-footer { padding: 16px 24px 24px; gap: 8px 24px; }
+}
